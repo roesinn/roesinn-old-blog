@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Posts on MM3* lab</title>
+    <link>/post/</link>
+    <description>Recent content in Posts on MM3* lab</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>©2020 roesinn</copyright>
+    <lastBuildDate>Tue, 09 Jun 2020 20:08:06 +0200</lastBuildDate>
+    
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>混淆电路协议 (Yao&#39;s Garbled Circuit Protocol)</title>
+      <link>/post/garbledcircuit/</link>
+      <pubDate>Tue, 09 Jun 2020 20:08:06 +0200</pubDate>
+      
+      <guid>/post/garbledcircuit/</guid>
+      <description>1 混淆电路协议 姚期智在1986年提出了混淆电路协议，它让两个拥有各自秘密输入x, y的参与方，共同计算一个函数值f(x,y)。 它将任意函数f(</description>
+      
+    </item>
+    
+    <item>
+      <title>安全多方计算</title>
+      <link>/post/mpc/</link>
+      <pubDate>Tue, 09 Jun 2020 16:50:31 +0200</pubDate>
+      
+      <guid>/post/mpc/</guid>
+      <description>1 安全多方计算 安全多方计算是一个密码学工具，允许互不信任的参与方根据自己的输入计算任意一个函数，计算过程不泄露除输出结果以外的任何信息。 1.1 通</description>
+      
+    </item>
+    
+    <item>
+      <title>P问题、NP问题和NPC问题</title>
+      <link>/post/p%E9%97%AE%E9%A2%98np%E9%97%AE%E9%A2%98%E5%92%8Cnpc%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Sun, 10 May 2020 16:29:42 +0200</pubDate>
+      
+      <guid>/post/p%E9%97%AE%E9%A2%98np%E9%97%AE%E9%A2%98%E5%92%8Cnpc%E9%97%AE%E9%A2%98/</guid>
+      <description>P类问题：如果一个问题可以找到一个能在多项式的时间里解决它的算法。 NP问题：可以在多项式时间里验证一个解的问题。</description>
+      
+    </item>
+    
+    <item>
+      <title>CSS中的LCH颜色</title>
+      <link>/post/lch_in_css/</link>
+      <pubDate>Mon, 13 Apr 2020 17:11:49 +0200</pubDate>
+      
+      <guid>/post/lch_in_css/</guid>
+      <description>在W3C发布的CSS Color 4中定义了LCH颜色。它使用三个参数：亮度、彩度和色相(Lightness, Chroma, Hue)。目前，几乎所有的主流浏览器都已</description>
+      
+    </item>
+    
+    <item>
+      <title>I2P，Tor和VPN哪个更安全?</title>
+      <link>/post/i2p-tor%E5%92%8Cvpn%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%AE%89%E5%85%A8/</link>
+      <pubDate>Sun, 01 Mar 2020 12:35:11 -0500</pubDate>
+      
+      <guid>/post/i2p-tor%E5%92%8Cvpn%E5%93%AA%E4%B8%AA%E6%9B%B4%E5%AE%89%E5%85%A8/</guid>
+      <description>&lt;p&gt;翻译自&lt;a href=&#34;https://www.makeuseof.com/tag/i2p-vs-tor-vs-vpn-secure/&#34;target=&#34;_blank&#34;&gt;原文&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;当我们讨论到安全和隐私时，有几个常见的缩写词在到处流传。你可能会看到隐私匿名浏览器Tor和VPN经常出现在在主流媒体文章，还有另一个值得考虑的选择：I2P。&lt;/p&gt;
+&lt;p&gt;但哪一种适合你呢？让我们探讨一下什么是I2P、Tor和VPN，&lt;strong&gt;以及哪一个适合你&lt;/strong&gt;。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Hexo参考文档汇总</title>
+      <link>/post/hexo%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3%E6%B1%87%E6%80%BB/</link>
+      <pubDate>Sun, 23 Feb 2020 12:35:11 -0500</pubDate>
+      
+      <guid>/post/hexo%E5%8F%82%E8%80%83%E6%96%87%E6%A1%A3%E6%B1%87%E6%80%BB/</guid>
+      <description>本文为Hexo及第三方插件的文档汇总。 Hexo Documents - Customization——Hexo官方文档 NexT Documents——NexT主题官方文档 Hexo Pl</description>
+      
+    </item>
+    
+    <item>
+      <title>Hexo &#43; NexT 优化配置记录</title>
+      <link>/post/hexo-next-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</link>
+      <pubDate>Thu, 20 Feb 2020 12:35:11 -0500</pubDate>
+      
+      <guid>/post/hexo-next-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</guid>
+      <description>&lt;p&gt;本文收录我在Hexo建站初期对NexT主题进行的配置、陆陆续续用到的插件以及调试时遇到的问题，仍在持续更新。其中包含部分我的&lt;code&gt;custom.styl&lt;/code&gt; 代码以供参考。&lt;/p&gt;</description>
+      
+    </item>
+    
+  </channel>
+</rss>
