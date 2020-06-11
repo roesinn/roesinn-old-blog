@@ -7,10 +7,20 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
-    <lastBuildDate>Tue, 09 Jun 2020 20:08:06 +0200</lastBuildDate>
+    <lastBuildDate>Thu, 11 Jun 2020 00:06:15 +0200</lastBuildDate>
     
         <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>密码协议中的安全参数</title>
+      <link>/post/securitypara/</link>
+      <pubDate>Thu, 11 Jun 2020 00:06:15 +0200</pubDate>
+      
+      <guid>/post/securitypara/</guid>
+      <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
+      
+    </item>
     
     <item>
       <title>混淆电路协议 (Yao&#39;s Garbled Circuit Protocol)</title>
@@ -18,7 +28,7 @@
       <pubDate>Tue, 09 Jun 2020 20:08:06 +0200</pubDate>
       
       <guid>/post/garbledcircuit/</guid>
-      <description>1 混淆电路协议 姚期智在1986年提出了混淆电路协议，它让两个拥有各自秘密输入x, y的参与方，共同计算一个函数值f(x,y)。 它将任意函数f(</description>
+      <description>&lt;p&gt;姚期智在1986年提出了混淆电路协议。&lt;/p&gt;</description>
       
     </item>
     
@@ -29,16 +39,6 @@
       
       <guid>/post/mpc/</guid>
       <description>1 安全多方计算 安全多方计算是一个密码学工具，允许互不信任的参与方根据自己的输入计算任意一个函数，计算过程不泄露除输出结果以外的任何信息。 1.1 通</description>
-      
-    </item>
-    
-    <item>
-      <title>P问题、NP问题和NPC问题</title>
-      <link>/post/p%E9%97%AE%E9%A2%98np%E9%97%AE%E9%A2%98%E5%92%8Cnpc%E9%97%AE%E9%A2%98/</link>
-      <pubDate>Sun, 10 May 2020 16:29:42 +0200</pubDate>
-      
-      <guid>/post/p%E9%97%AE%E9%A2%98np%E9%97%AE%E9%A2%98%E5%92%8Cnpc%E9%97%AE%E9%A2%98/</guid>
-      <description>P类问题：如果一个问题可以找到一个能在多项式的时间里解决它的算法。 NP问题：可以在多项式时间里验证一个解的问题。</description>
       
     </item>
     
@@ -80,7 +80,7 @@
       <pubDate>Thu, 20 Feb 2020 12:35:11 -0500</pubDate>
       
       <guid>/post/hexo-next-%E4%BC%98%E5%8C%96%E9%85%8D%E7%BD%AE%E8%AE%B0%E5%BD%95/</guid>
-      <description>&lt;p&gt;本文收录我在Hexo建站初期对NexT主题进行的配置、陆陆续续用到的插件以及调试时遇到的问题，仍在持续更新。其中包含部分我的&lt;code&gt;custom.styl&lt;/code&gt; 代码以供参考。&lt;/p&gt;</description>
+      <description>&lt;p&gt;本文收录我在Hexo建站初期对NexT主题进行的配置、陆陆续续用到的插件以及调试时遇到的问题。其中包含部分我的&lt;code&gt;custom.styl&lt;/code&gt; 代码以供参考。目前已改用Hugo。&lt;/p&gt;</description>
       
     </item>
     
