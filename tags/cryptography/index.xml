@@ -7,7 +7,7 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
-    <lastBuildDate>Thu, 11 Jun 2020 00:06:15 +0200</lastBuildDate>
+    <lastBuildDate>Mon, 01 Jun 2020 00:06:15 +0200</lastBuildDate>
     
         <atom:link href="/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     
@@ -15,7 +15,7 @@
     <item>
       <title>密码协议中的安全参数</title>
       <link>/post/securitypara/</link>
-      <pubDate>Thu, 11 Jun 2020 00:06:15 +0200</pubDate>
+      <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>
       
       <guid>/post/securitypara/</guid>
       <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
