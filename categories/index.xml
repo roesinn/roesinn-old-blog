@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Categories on MM3* lab</title>
-    <link>roesinn.de/categories/</link>
+    <link>/categories/</link>
     <description>Recent content in Categories on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 20:08:06 +0200</lastBuildDate>
     
-        <atom:link href="roesinn.de/categories/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CryptoProtocol</title>
-      <link>roesinn.de/categories/cryptoprotocol/</link>
+      <link>/categories/cryptoprotocol/</link>
       <pubDate>Tue, 09 Jun 2020 20:08:06 +0200</pubDate>
       
-      <guid>roesinn.de/categories/cryptoprotocol/</guid>
+      <guid>/categories/cryptoprotocol/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>WebDevelop</title>
-      <link>roesinn.de/categories/webdevelop/</link>
+      <link>/categories/webdevelop/</link>
       <pubDate>Mon, 13 Apr 2020 17:11:49 +0200</pubDate>
       
-      <guid>roesinn.de/categories/webdevelop/</guid>
+      <guid>/categories/webdevelop/</guid>
       <description></description>
       
     </item>
     
     <item>
       <title>Privacy</title>
-      <link>roesinn.de/categories/privacy/</link>
+      <link>/categories/privacy/</link>
       <pubDate>Sun, 01 Mar 2020 12:35:11 -0500</pubDate>
       
-      <guid>roesinn.de/categories/privacy/</guid>
+      <guid>/categories/privacy/</guid>
       <description></description>
       
     </item>

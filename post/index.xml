@@ -2,52 +2,52 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Posts on MM3* lab</title>
-    <link>roesinn.de/post/</link>
+    <link>/post/</link>
     <description>Recent content in Posts on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Tue, 09 Jun 2020 20:08:06 +0200</lastBuildDate>
     
-        <atom:link href="roesinn.de/post/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/post/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>混淆电路(一)：姚氏混淆电路协议</title>
-      <link>roesinn.de/post/garbledcircuit/</link>
+      <link>/post/garbledcircuit/</link>
       <pubDate>Tue, 09 Jun 2020 20:08:06 +0200</pubDate>
       
-      <guid>roesinn.de/post/garbledcircuit/</guid>
+      <guid>/post/garbledcircuit/</guid>
       <description>&lt;p&gt;随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对&lt;strong&gt;输入&lt;/strong&gt;和&lt;strong&gt;函数本身&lt;/strong&gt;都进行加密，从而达到保护函数“内部信息”的目的。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>密码协议中的安全参数</title>
-      <link>roesinn.de/post/securitypara/</link>
+      <link>/post/securitypara/</link>
       <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>
       
-      <guid>roesinn.de/post/securitypara/</guid>
+      <guid>/post/securitypara/</guid>
       <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>CSS中的LCH颜色</title>
-      <link>roesinn.de/post/lch_in_css/</link>
+      <link>/post/lch_in_css/</link>
       <pubDate>Mon, 13 Apr 2020 17:11:49 +0200</pubDate>
       
-      <guid>roesinn.de/post/lch_in_css/</guid>
+      <guid>/post/lch_in_css/</guid>
       <description>在W3C发布的CSS Color 4中定义了LCH颜色。它使用三个参数：亮度、彩度和色相(Lightness, Chroma, Hue)。目前，几乎所有的主流浏览器都已</description>
       
     </item>
     
     <item>
       <title>I2P，Tor和VPN哪个更安全?</title>
-      <link>roesinn.de/post/i2pvpntor/</link>
+      <link>/post/i2pvpntor/</link>
       <pubDate>Sun, 01 Mar 2020 12:35:11 -0500</pubDate>
       
-      <guid>roesinn.de/post/i2pvpntor/</guid>
+      <guid>/post/i2pvpntor/</guid>
       <description>&lt;p&gt;翻译自&lt;a href=&#34;https://www.makeuseof.com/tag/i2p-vs-tor-vs-vpn-secure/&#34;target=&#34;_blank&#34;&gt;原文&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;当我们讨论到安全和隐私时，有几个常见的缩写词在到处流传。你可能会看到隐私匿名浏览器Tor和VPN经常出现在在主流媒体文章，还有另一个值得考虑的选择：I2P。&lt;/p&gt;
 &lt;p&gt;但哪一种适合你呢？让我们探讨一下什么是I2P、Tor和VPN，&lt;strong&gt;以及哪一个适合你&lt;/strong&gt;。&lt;/p&gt;</description>
@@ -56,20 +56,20 @@
     
     <item>
       <title>Hexo参考文档汇总</title>
-      <link>roesinn.de/post/hexo_ref/</link>
+      <link>/post/hexo_ref/</link>
       <pubDate>Sun, 23 Feb 2020 12:35:11 -0500</pubDate>
       
-      <guid>roesinn.de/post/hexo_ref/</guid>
+      <guid>/post/hexo_ref/</guid>
       <description>本文为Hexo及第三方插件的文档汇总。 Hexo Documents - Customization——Hexo官方文档 NexT Documents——NexT主题官方文档 Hexo Pl</description>
       
     </item>
     
     <item>
       <title>Hexo &#43; NexT 优化配置记录</title>
-      <link>roesinn.de/post/hexo-next-conf/</link>
+      <link>/post/hexo-next-conf/</link>
       <pubDate>Thu, 20 Feb 2020 12:35:11 -0500</pubDate>
       
-      <guid>roesinn.de/post/hexo-next-conf/</guid>
+      <guid>/post/hexo-next-conf/</guid>
       <description>&lt;p&gt;本文收录我在Hexo建站初期对NexT主题进行的配置、陆陆续续用到的插件以及调试时遇到的问题。其中包含部分我的&lt;code&gt;custom.styl&lt;/code&gt; 代码以供参考。目前已改用Hugo。&lt;/p&gt;</description>
       
     </item>

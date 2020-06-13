@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>css on MM3* lab</title>
-    <link>roesinn.de/tags/css/</link>
+    <link>/tags/css/</link>
     <description>Recent content in css on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Mon, 13 Apr 2020 17:11:49 +0200</lastBuildDate>
     
-        <atom:link href="roesinn.de/tags/css/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="/tags/css/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>CSS中的LCH颜色</title>
-      <link>roesinn.de/post/lch_in_css/</link>
+      <link>/post/lch_in_css/</link>
       <pubDate>Mon, 13 Apr 2020 17:11:49 +0200</pubDate>
       
-      <guid>roesinn.de/post/lch_in_css/</guid>
+      <guid>/post/lch_in_css/</guid>
       <description>在W3C发布的CSS Color 4中定义了LCH颜色。它使用三个参数：亮度、彩度和色相(Lightness, Chroma, Hue)。目前，几乎所有的主流浏览器都已</description>
       
     </item>
