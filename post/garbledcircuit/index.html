@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>混淆电路(一)：姚期智的混淆电路协议&nbsp;&ndash;&nbsp;MM3* lab</title><link rel="stylesheet" href="/css/core.min.961fc87ad9f86cb05e8ef4baaccf4f323457bce8db7a856e993b1b134cd981e867e155b5326411191894baab9e96e290.css" integrity="sha384-lh/Ietn4bLBejvS6rM9PMjRXvOjbeoVumTsbE0zZgehn4VW1MmQRGRiUuqueluKQ"><meta name="twitter:card" content="summary" />
-<meta name="twitter:title" content="混淆电路(一)：姚期智的混淆电路协议" />
+<meta name="supported-color-schemes" content="light dark"><title>混淆电路(一)：姚氏混淆电路协议&nbsp;&ndash;&nbsp;MM3* lab</title><link rel="stylesheet" href="/css/core.min.961fc87ad9f86cb05e8ef4baaccf4f323457bce8db7a856e993b1b134cd981e867e155b5326411191894baab9e96e290.css" integrity="sha384-lh/Ietn4bLBejvS6rM9PMjRXvOjbeoVumTsbE0zZgehn4VW1MmQRGRiUuqueluKQ"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="混淆电路(一)：姚氏混淆电路协议" />
 <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 
@@ -18,7 +18,7 @@
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">MM3* lab</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/projects/">Projects</a><a class="nav item" href="/about/">About</a><a class="mode iconfont icon-adjust"></a>
 </nav></div></span></div><div class="site slogan"><span class="title">- Cryptography, Security, Privacy - </span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">混淆电路(一)：姚期智的混淆电路协议</h1><p class="article date">Jun 09, 2020<span class="reading-time"> • 9 minutes to read</span></p></section><article class="article markdown-body"><p>随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对<strong>输入</strong>和<strong>函数本身</strong>都进行加密，从而达到保护函数“内部信息”的目的。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。</p>
+    <h1 class="article title">混淆电路(一)：姚氏混淆电路协议</h1><p class="article date">Jun 09, 2020<span class="reading-time"> • 9 minutes to read</span></p></section><article class="article markdown-body"><p>随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对<strong>输入</strong>和<strong>函数本身</strong>都进行加密，从而达到保护函数“内部信息”的目的。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。</p>
 <p>对函数加密意味着把函数作为一种黑盒，除了想要的输出以外，其他信息都无法获得。或者说，给定输入，只能获得对应的输出。</p>
 <p>简单介绍一下混淆电路的历史：</p>
 <ul>
