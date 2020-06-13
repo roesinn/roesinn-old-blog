@@ -23,16 +23,6 @@
     </item>
     
     <item>
-      <title>安全多方计算</title>
-      <link>/post/mpc/</link>
-      <pubDate>Tue, 09 Jun 2020 16:50:31 +0200</pubDate>
-      
-      <guid>/post/mpc/</guid>
-      <description>1 安全多方计算 安全多方计算是一个密码学工具，允许互不信任的参与方根据自己的输入计算任意一个函数，计算过程不泄露除输出结果以外的任何信息。 1.1 通</description>
-      
-    </item>
-    
-    <item>
       <title>密码协议中的安全参数</title>
       <link>/post/securitypara/</link>
       <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>

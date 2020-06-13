@@ -7,7 +7,6 @@
     <loc>/post/</loc><lastmod>2020-06-09T20:08:06+02:00</lastmod></url><url>
     <loc>/tags/</loc><lastmod>2020-06-09T20:08:06+02:00</lastmod></url><url>
     <loc>/post/garbledcircuit/</loc><lastmod>2020-06-09T20:08:06+02:00</lastmod></url><url>
-    <loc>/post/mpc/</loc><lastmod>2020-06-09T16:50:31+02:00</lastmod></url><url>
     <loc>/tags/cryptography/</loc><lastmod>2020-06-01T00:06:15+02:00</lastmod></url><url>
     <loc>/post/securitypara/</loc><lastmod>2020-06-01T00:06:15+02:00</lastmod></url><url>
     <loc>/tags/css/</loc><lastmod>2020-04-13T17:11:49+02:00</lastmod></url><url>
@@ -32,4 +31,16 @@
     <loc>/ref/emoji-support/</loc><lastmod>2019-03-05T00:00:00+00:00</lastmod></url><url>
     <loc>/about/</loc><lastmod>2019-02-28T00:00:00+00:00</lastmod></url><url>
     <loc>/ref/about/</loc><lastmod>2019-02-28T00:00:00+00:00</lastmod></url><url>
-    <loc>/tags/index/</loc></url></urlset>
+    <loc>/tags/index/</loc></url>
+  <url>
+    <loc>/post/garbledcircuit/</loc><lastmod>2020-06-09T20:08:06+02:00</lastmod></url>
+  <url>
+    <loc>/post/securitypara/</loc><lastmod>2020-06-01T00:06:15+02:00</lastmod></url>
+  <url>
+    <loc>/post/lch_in_css/</loc><lastmod>2020-04-13T17:11:49+02:00</lastmod></url>
+  <url>
+    <loc>/post/i2pvpntor/</loc><lastmod>2020-03-01T12:35:11-05:00</lastmod></url>
+  <url>
+    <loc>/post/hexo_ref/</loc><lastmod>2020-02-23T12:35:11-05:00</lastmod></url>
+  <url>
+    <loc>/post/hexo-next-conf/</loc><lastmod>2020-02-20T12:35:11-05:00</lastmod></url></urlset>
