@@ -2,42 +2,42 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>References on MM3* lab</title>
-    <link>/ref/</link>
+    <link>roesinn.de/ref/</link>
     <description>Recent content in References on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Mon, 11 Mar 2019 00:00:00 +0000</lastBuildDate>
     
-        <atom:link href="/ref/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="roesinn.de/ref/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Markdown Syntax Guide</title>
-      <link>/ref/markdown-syntax/</link>
+      <link>roesinn.de/ref/markdown-syntax/</link>
       <pubDate>Mon, 11 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/markdown-syntax/</guid>
+      <guid>roesinn.de/ref/markdown-syntax/</guid>
       <description>&lt;p&gt;This article offers a sample of basic Markdown syntax that can be used in Hugo content files, also it shows whether basic HTML elements are decorated with CSS in a Hugo theme.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Rich Content</title>
-      <link>/ref/rich-content/</link>
+      <link>roesinn.de/ref/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/rich-content/</guid>
+      <guid>roesinn.de/ref/rich-content/</guid>
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;target=&#34;_blank&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;target=&#34;_blank&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Placeholder Text</title>
-      <link>/ref/placeholder-text/</link>
+      <link>roesinn.de/ref/placeholder-text/</link>
       <pubDate>Sat, 09 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/placeholder-text/</guid>
+      <guid>roesinn.de/ref/placeholder-text/</guid>
       <description>&lt;p&gt;Lorem est tota propiore conpellat pectoribus de
 pectora summo.&lt;/p&gt;</description>
       
@@ -45,30 +45,30 @@ pectora summo.&lt;/p&gt;</description>
     
     <item>
       <title>Math Typesetting</title>
-      <link>/ref/math-typesetting/</link>
+      <link>roesinn.de/ref/math-typesetting/</link>
       <pubDate>Fri, 08 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/math-typesetting/</guid>
+      <guid>roesinn.de/ref/math-typesetting/</guid>
       <description>&lt;p&gt;Mathematical notation in a Hugo project can be enabled by using third party JavaScript libraries.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>Emoji Support</title>
-      <link>/ref/emoji-support/</link>
+      <link>roesinn.de/ref/emoji-support/</link>
       <pubDate>Tue, 05 Mar 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/emoji-support/</guid>
+      <guid>roesinn.de/ref/emoji-support/</guid>
       <description>&lt;p&gt;Emoji can be enabled in a Hugo project in a number of ways.&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>About</title>
-      <link>/ref/about/</link>
+      <link>roesinn.de/ref/about/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>/ref/about/</guid>
+      <guid>roesinn.de/ref/about/</guid>
       <description>Written in Go, Hugo is an open source static site generator available under the Apache Licence 2.0. Hugo supports TOML, YAML and JSON data file types, Markdown and HTML content files and uses shortcodes to add rich content. Other notable features are taxonomies, multilingual mode, image processing, custom output formats, HTML/CSS/JS minification and support for Sass SCSS workflows.
 Hugo makes use of a variety of open source projects including:
  https://github.</description>

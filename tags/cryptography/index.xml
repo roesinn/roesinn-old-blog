@@ -2,22 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Cryptography on MM3* lab</title>
-    <link>/tags/cryptography/</link>
+    <link>roesinn.de/tags/cryptography/</link>
     <description>Recent content in Cryptography on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Mon, 01 Jun 2020 00:06:15 +0200</lastBuildDate>
     
-        <atom:link href="/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="roesinn.de/tags/cryptography/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>密码协议中的安全参数</title>
-      <link>/post/securitypara/</link>
+      <link>roesinn.de/post/securitypara/</link>
       <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>
       
-      <guid>/post/securitypara/</guid>
+      <guid>roesinn.de/post/securitypara/</guid>
       <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
       
     </item>

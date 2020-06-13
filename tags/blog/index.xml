@@ -2,32 +2,32 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>blog on MM3* lab</title>
-    <link>/tags/blog/</link>
+    <link>roesinn.de/tags/blog/</link>
     <description>Recent content in blog on MM3* lab</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
     <lastBuildDate>Sun, 23 Feb 2020 12:35:11 -0500</lastBuildDate>
     
-        <atom:link href="/tags/blog/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="roesinn.de/tags/blog/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Hexo参考文档汇总</title>
-      <link>/post/hexo_ref/</link>
+      <link>roesinn.de/post/hexo_ref/</link>
       <pubDate>Sun, 23 Feb 2020 12:35:11 -0500</pubDate>
       
-      <guid>/post/hexo_ref/</guid>
+      <guid>roesinn.de/post/hexo_ref/</guid>
       <description>本文为Hexo及第三方插件的文档汇总。 Hexo Documents - Customization——Hexo官方文档 NexT Documents——NexT主题官方文档 Hexo Pl</description>
       
     </item>
     
     <item>
       <title>Hexo &#43; NexT 优化配置记录</title>
-      <link>/post/hexo-next-conf/</link>
+      <link>roesinn.de/post/hexo-next-conf/</link>
       <pubDate>Thu, 20 Feb 2020 12:35:11 -0500</pubDate>
       
-      <guid>/post/hexo-next-conf/</guid>
+      <guid>roesinn.de/post/hexo-next-conf/</guid>
       <description>&lt;p&gt;本文收录我在Hexo建站初期对NexT主题进行的配置、陆陆续续用到的插件以及调试时遇到的问题。其中包含部分我的&lt;code&gt;custom.styl&lt;/code&gt; 代码以供参考。目前已改用Hugo。&lt;/p&gt;</description>
       
     </item>
