@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>混淆电路(一)：姚氏混淆电路协议&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="Garbled Circuit, secure two-party computation, secure multiple-party computation; 混淆电路，姚期智，安全两方计算，安全多方计算" /><link rel="stylesheet" href="/css/core.min.77057fd5546ed3f17b2399308133e4ef5224ee4bcfd9875c73b7b82c2c50b0fc422203b0f7e6b6dbe98dfcad38840ad5.css" integrity="sha384-dwV/1VRu0/F7I5kwgTPk71Ik7kvP2Ydcc7e4LCxQsPxCIgOw9&#43;a22&#43;mN/K04hArV"><meta name="twitter:card" content="summary" />
+<meta name="supported-color-schemes" content="light dark"><title>混淆电路(一)：姚氏混淆电路协议&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="Garbled Circuit, secure two-party computation, secure multiple-party computation; 混淆电路，姚期智，安全两方计算，安全多方计算" /><link rel="stylesheet" href="/css/core.min.1669fbd751cb2a071e67f106e2639d9453b5a0bf78461131b81914b068ba4d10c8241ba6ae7cf45acbb07fd4374e24d4.css" integrity="sha384-Fmn711HLKgceZ/EG4mOdlFO1oL94RhExuBkUsGi6TRDIJBumrnz0Wsuwf9Q3TiTU"><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="混淆电路(一)：姚氏混淆电路协议" />
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
@@ -62,11 +62,12 @@
 <p>对于一个混淆电路的逻辑门，又叫<strong>混淆门</strong>(Garbled Gate)，我们用两个$$\kappa$$bit长的随机密钥$$ \tilde {v}^0 $$和$$ \tilde {v}^1 $$来代替布尔值$$0$$或$$1$$，称为<strong>混淆值</strong>(Garbled Value)，也叫0-key和1-key。混淆门的每条输入和输出线上都是混淆值$$ \tilde {v}^0 $$或$$ \tilde {v}^1 $$。已知混淆门的输入值，通过对照<strong>混淆表</strong>(Garbled Table)，可以获得该混淆门的输出值，如下图(b)所示。</p>
 <p><img  src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591911991/blog/WX20200611-234322_2x_qeyd96.png"
         alt/></p>
-<p>对于相同的逻辑门，混淆表的规则和混淆前真值表的规则一致，比如：</p>
+<p>对于相同的逻辑门，混淆表的规则和混淆前真值表的规则一致，下图是与($$∧$$)门的混淆规则：</p>
 <ul>
-<li>混淆前的真值表规则: $$x_1=1, y_1=1: z_1=0$$</li>
-<li>则混淆后的真值表规则: $$x_1= \tilde {x}^1, y_1= \tilde {y}^1: z_1= \tilde {z}^0$$</li>
+<li>混淆前的真值表规则: $$x=1, y=0 \to z=0$$</li>
+<li>则混淆后的真值表规则: $$x= \tilde {x}^1, y= \tilde {y}^0 \to z= \tilde {z}^0$$</li>
 </ul>
+<p><img style="height: 350px" src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1592129433/blog/1592128442430_bezeyp.jpg"> <br></p>
 <p>不过这种程度的混淆还不够，我们还要对表中条目的顺序进行打乱，以达到进一步的混淆。下一小节会介绍混淆电路方案的详细思路。</p>
 <h3 id="混淆电路协议的基本构想">混淆电路协议的基本构想</h3>
 <p>混淆电路的基本思路是基于随机选择的<strong>混淆值$$ \tilde {v} $$</strong>来计算，而不是基于明文$$v$$。</p>
@@ -74,11 +75,12 @@
 <p>混淆值$$ \tilde {v}$$是$$ \tilde {v}^0 $$和$$ \tilde {v}^1 $$中的一个，它们分别对应于明文$$0$$和$$1$$。$$ \tilde {v}^0 $$和$$ \tilde {v}^1 $$是$$\kappa$$bit长的随机密钥 ($$\kappa$$是安全参数，通常取$$\kappa$$=128)。</p>
 <p>一个混淆值$$ \tilde {v}$$不会泄露它对应的明文信息，即对应$$0$$还是$$1$$。
 <br></p>
-<img src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591954620/blog/1591954593327_axshkg.jpg" style="width: 320px">
+<img src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591954620/blog/1591954593327_axshkg.jpg" style="width: 320px;">
 <h5 id="2-混淆门-garbled-gates">2. 混淆门 (Garbled Gates)</h5>
 <p>混淆门$$ \tilde {G}$$允许进行混淆值的计算。对于混淆输入值$$ \tilde {x} $$和$$ \tilde {y} $$，混淆表$$ \tilde {T}$$只允许恢复相应的混淆输出值$$ \tilde {z} $$，其他值无法恢复。</p>
-<img src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591955192/blog/1591955180196_qjjriq.jpg" style="width: 500px">
-<br>
+<p><img  src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591955192/blog/1591955180196_qjjriq.jpg"
+        alt/>
+<br></p>
 <ul>
 <li>对于$$2^2=4$$个组合中的每一组混淆输入值$$ \tilde {x}^i $$和$$ \tilde {y}^j $$，相应的混淆输出值$$ \tilde {z}^{T(i,j)} $$使用$$ \tilde {x}^i $$和$$ \tilde {y}^j $$作为密钥进行对称加密。</li>
 <li>混淆表中的条目是随机排列的，用来消除位置带来的信息泄露。</li>
@@ -173,7 +175,7 @@
 </ol>
 </section></article><section class="article labels"><a class="category" href=/categories/cryptoprotocol/>CryptoProtocol</a><a class="iconfont tag icon-tag" href=/tags/mpc/>MPC</a></section><section class="article author"><img class="avatar" src="/img/2.png" alt><p class="name">Roesinn</p><div class="bio"><strong>Security</strong> MSc. Student <br> <strong>Web</strong> Designer</div><div class="details"></div>
 </section></div>
-<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/securitypara/"><span class="iconfont icon-article-right"></span>密码协议中的安全参数</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/cryptoproto/garbledcircuit2/"><span class="iconfont icon-article-left"></span>混淆电路(二)：混淆电路构造的优化</a></p><p><a class="link" href="/post/cryptoproto/securitypara/"><span class="iconfont icon-article-right"></span>密码协议中的安全参数</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
 <script>
 
 

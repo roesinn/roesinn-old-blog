@@ -14,10 +14,10 @@
     
     <item>
       <title>密码协议中的安全参数</title>
-      <link>/post/securitypara/</link>
+      <link>/post/cryptoproto/securitypara/</link>
       <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>
       
-      <guid>/post/securitypara/</guid>
+      <guid>/post/cryptoproto/securitypara/</guid>
       <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
       
     </item>

@@ -7,27 +7,47 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
-    <lastBuildDate>Tue, 09 Jun 2020 20:08:06 +0200</lastBuildDate>
+    <lastBuildDate>Sun, 14 Jun 2020 19:15:41 +0200</lastBuildDate>
     
         <atom:link href="/categories/cryptoprotocol/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
+      <title>混淆电路(三)：GMW协议</title>
+      <link>/post/cryptoproto/garbledcircuit3/</link>
+      <pubDate>Sun, 14 Jun 2020 19:15:41 +0200</pubDate>
+      
+      <guid>/post/cryptoproto/garbledcircuit3/</guid>
+      <description>&lt;p&gt;这篇文章介绍GMW的安全两方计算协议&lt;cite&gt;&lt;sup id=&#34;fnref:1&#34;&gt;&lt;a href=&#34;#fn:1&#34; class=&#34;footnote-ref&#34; role=&#34;doc-noteref&#34;&gt;1&lt;/a&gt;&lt;/sup&gt;&lt;/cite&gt;，并对Yao和GMW的安全两方计算协议进行比较。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>混淆电路(二)：混淆电路构造的优化</title>
+      <link>/post/cryptoproto/garbledcircuit2/</link>
+      <pubDate>Fri, 12 Jun 2020 17:04:41 +0200</pubDate>
+      
+      <guid>/post/cryptoproto/garbledcircuit2/</guid>
+      <description>&lt;p&gt;自姚1986年提出混淆电路构造(GC Construction)以来，许多学者都对这种构造进行了优化。目前最高效的GC构造是&lt;strong&gt;HalfGates&lt;/strong&gt;方案，它的电路规模(size)、加密代价(Garbled cost)和&amp;quot;解密&amp;quot;代价(Evaluation cost)都非常小。这些构造都属于&lt;strong&gt;基于电路的安全两方计算&lt;/strong&gt;协议。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
       <title>混淆电路(一)：姚氏混淆电路协议</title>
-      <link>/post/garbledcircuit/</link>
+      <link>/post/cryptoproto/garbledcircuit/</link>
       <pubDate>Tue, 09 Jun 2020 20:08:06 +0200</pubDate>
       
-      <guid>/post/garbledcircuit/</guid>
+      <guid>/post/cryptoproto/garbledcircuit/</guid>
       <description>&lt;p&gt;随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对&lt;strong&gt;输入&lt;/strong&gt;和&lt;strong&gt;函数本身&lt;/strong&gt;都进行加密，从而达到保护函数“内部信息”的目的。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。&lt;/p&gt;</description>
       
     </item>
     
     <item>
       <title>密码协议中的安全参数</title>
-      <link>/post/securitypara/</link>
+      <link>/post/cryptoproto/securitypara/</link>
       <pubDate>Mon, 01 Jun 2020 00:06:15 +0200</pubDate>
       
-      <guid>/post/securitypara/</guid>
+      <guid>/post/cryptoproto/securitypara/</guid>
       <description>&lt;p&gt;为了研究的方便，理论密码学家用安全参数(Security Parameter)来量化一个密码方案的安全性，从而进行密码协议的安全性分析。&lt;/p&gt;</description>
       
     </item>
