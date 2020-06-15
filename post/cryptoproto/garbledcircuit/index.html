@@ -17,12 +17,12 @@
     <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">MM3* lab</span></a></span>
         <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/projects/">Projects</a><a class="nav item" href="/about/">About</a><a class="mode iconfont icon-adjust"></a>
 </nav></div></span></div><div class="site slogan"><span class="title">- Cryptography, Security, Privacy - </span></div></section><section id="content"><div class="article-container"><section class="article header">
-    <h1 class="article title">混淆电路(一)：姚氏混淆电路协议</h1><p class="article date">Jun 09, 2020<span class="reading-time"> • 9 minutes to read</span></p></section><article class="article markdown-body"><p>随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对<strong>输入</strong>和<strong>函数本身</strong>都进行加密，从而达到保护函数“内部信息”的目的。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。</p>
+    <h1 class="article title">混淆电路(一)：姚氏混淆电路协议</h1><p class="article date">Jun 09, 2020<span class="reading-time"> • 9 minutes to read</span></p></section><article class="article markdown-body"><p>随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对<strong>输入</strong>和<strong>函数本身</strong>都进行加密，从而达到保护函数“内部信息”的目的，这就是<strong>安全计算</strong>。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。</p>
 <p>对函数加密意味着把函数作为一种黑盒，除了想要的输出以外，其他信息都无法获得。或者说，给定输入，只能获得对应的输出。</p>
 <p>简单介绍一下混淆电路的历史：</p>
 <ul>
 <li>混淆电路最初是由Yao(姚期智)在1986年为解决安全两方计算而提出的一种<strong>电路加密技巧</strong><cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite>，它是一种安全两方计算协议。</li>
-<li>1987年，GMW协议将两个参与者扩展为多个<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>。</li>
+<li>1987年，<a href="https://roesinn.de/post/cryptoproto/garbledcircuit3/"target="_blank">GMW协议</a>将两个参与者扩展为多个<cite><sup id="fnref:2"><a href="#fn:2" class="footnote-ref" role="doc-noteref">2</a></sup></cite>。</li>
 <li>2008年，Lindell等人第一次提出了混淆电路方案<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite>。</li>
 <li>2012年，Bellare等人给出了混淆电路具体的形式化定义<cite><sup id="fnref:4"><a href="#fn:4" class="footnote-ref" role="doc-noteref">4</a></sup></cite>。</li>
 <li>2013年，Goldwasser等人构造了第一个可重用的混淆电路方案<cite><sup id="fnref:5"><a href="#fn:5" class="footnote-ref" role="doc-noteref">5</a></sup></cite>。</li>
@@ -30,6 +30,7 @@
 <p>但目前为止，可重用的混淆电路方案都不高效。是否存在更高效的可重用的混淆电路依然是人们关注的问题。除此之外，可重用混淆电路是否可以构造混淆也是一个待探索的问题。</p>
 <p>本文主要关注Yao和GMW的安全两方计算协议，并对两者进行比较。</p>
 <h1 id="安全两方计算">安全两方计算</h1>
+<blockquote>
 <p>安全两方计算(Seure Two-Party Computation)是指两个实体：</p>
 <ul>
 <li>使用任意函数$$f$$</li>
@@ -37,9 +38,9 @@
 <li>不依赖第三方</li>
 <li>除了结果$$z=f(x,y)$$外，对其他信息一无所知</li>
 </ul>
+</blockquote>
 <p>该方案的理想功能性(Ideal Functionaility)如下：</p>
-<p><img  src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591905393/blog/1591905130479_oab8we.jpg"
-        alt/></p>
+<p><img style="width:300px" src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1591905393/blog/1591905130479_oab8we.jpg"><br></p>
 <p>Yao构造的混淆电路方案就是一种安全两方计算协议。</p>
 <h1 id="yao的混淆电路协议cite1cite">Yao的混淆电路协议<cite><sup id="fnref:1"><a href="#fn:1" class="footnote-ref" role="doc-noteref">1</a></sup></cite></h1>
 <p>Yao的混淆电路协议是一种<strong>电路加密方案</strong>，它有以下特点：</p>
