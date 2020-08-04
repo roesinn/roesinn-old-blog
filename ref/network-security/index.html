@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Network security&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="A brief description of Hugo Shortcodes" /><link rel="stylesheet" href="/css/core.min.ab0d3a5e22e3151993291f6d9b37cc3b84ccda3453f319de36b3694f9fbe6554d6330ff9f681e7aacbd495939a9c0262.css" integrity="sha384-qw06XiLjFRmTKR9tmzfMO4TM2jRT8xneNrNpT5&#43;&#43;ZVTWMw/59oHnqsvUlZOanAJi"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Network security" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#fff">
+<body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">MM3* lab</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/projects/">Projects</a><a class="nav item" href="/about/">About</a><a class="mode iconfont icon-adjust"></a>
+</nav></div></span></div><div class="site slogan"><span class="title">- Cryptography, Security, Privacy - </span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Network security</h1><p class="article date">Mar 10, 2019</p></section><article class="article markdown-body"><h1 id="11-network-security">11. Network Security</h1>
+<h2 id="111-intro">11.1 Intro</h2>
+<p>Network security deals with <strong>secure communication</strong> over an <strong>insecure medium</strong>.</p>
+<h4 id="secure-communication-properties">Secure Communication properties</h4>
+<ul>
+<li>
+<p><strong>Confidentiality</strong></p>
+</li>
+<li>
+<p><strong>Intergrity</strong> - message contents remain <u>unaltered</u></p>
+</li>
+<li>
+<p><strong>Authentication</strong></p>
+</li>
+<li>
+<p><strong>Availability</strong></p>
+</li>
+</ul>
+<h4 id="adversary-types">Adversary types</h4>
+<ul>
+<li>
+<p><strong>Eavesdropping attackers</strong></p>
+<ul>
+<li>
+<p>only listen; no inject(spoof), intercept or modify;</p>
+</li>
+<li>
+<p><em>how?</em> use (remote) antenna</p>
+</li>
+<li>
+<p><strong>Defense</strong>: encryption</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Man-in-the-middle attackers</strong></p>
+<ul>
+<li>
+<p>On-path; can listen, inject, block and change messages</p>
+</li>
+<li>
+<p><em>how?</em> Control router/switch/link; route-hijacking</p>
+</li>
+<li>
+<p><strong>Defense</strong>: encryption, signatures, MACs</p>
+</li>
+</ul>
+</li>
+<li>
+<p><strong>Off-path attackers</strong></p>
+<ul>
+<li>
+<p>Off-path (do not control devices on route)</p>
+</li>
+<li>
+<p>can only inject; no intercept, modify or block</p>
+</li>
+<li>
+<p>Defense: challenge-response (&ldquo;cookie&rdquo;)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="112-computer-networks-and-internet">11.2 Computer Networks and Internet</h2>
+<p><mark>Vulnerable : Internet layer protocols + Internet&rsquo;s structure</mark></p>
+<h4 id="computer-networks">Computer Networks</h4>
+<ul>
+<li>
+<p>Networks</p>
+<ul>
+<li>
+<p>Devices - nodes/hosts</p>
+</li>
+<li>
+<p>Connection of 2 devices - link</p>
+</li>
+<li>
+<p>how to communicate - Protocols</p>
+</li>
+<li>
+<p>identify nodes - addresses</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Network types</p>
+<ul>
+<li>
+<p>Link, Bus, Switched</p>
+</li>
+<li>
+<p>Ring, Star</p>
+</li>
+<li>
+<p>Cellular, Satellite</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="internet">Internet</h4>
+<ul>
+<li>
+<p>Internet</p>
+<ul>
+<li>
+<p>Internetwork - a connection of networks; Internet - the “big, public” internetwork</p>
+</li>
+<li>
+<p>use the Internet protocol suite (TCP/IP)</p>
+</li>
+<li>
+<p>Each pair can communicate (sending packets, containing IP addresses</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Design and analysis of network protocols - Laying</p>
+<p>Physical*: often designed as Hardware independent</p>
+</li>
+</ul>
+<img title="" src="img/1592749412289.jpg" alt="1592749412289.jpg" data-align="center" width="449">
+<h4 id="internet-protocol-stack">Internet Protocol Stack</h4>
+<ol start="0">
+<li>
+<p>Physical Layer</p>
+<ul>
+<li>
+<p>Delivery of individual <strong>bits</strong> over a medium (air, wire, &hellip;)</p>
+</li>
+<li>
+<p>e.g. Fast Ethernet (100BASE-<em>), Gigabit Ethernet (1000BASE-</em>), &hellip;</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Data Link Layer</p>
+<ul>
+<li>
+<p>Delivery of <strong>frames</strong></p>
+</li>
+<li>
+<p>Identified by media access control address (MAC address)</p>
+</li>
+<li>
+<p>e.g. Ethernet, IEEE-802.11, PPP</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Internet Layer</p>
+<ul>
+<li>
+<p>Delivery of <strong>packets</strong> from one host to another</p>
+</li>
+<li>
+<p>Hosts are addressable over different Networks (if IPs are unique)</p>
+</li>
+<li>
+<p>Implemented in every host and every router</p>
+</li>
+<li>
+<p>e.g. IP</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Transport Layer</p>
+<ul>
+<li>
+<p>End-to-end communication of <strong>segments</strong> or <strong>datagrams</strong></p>
+</li>
+<li>
+<p>Congestion Control, Packet reordering/resending, &hellip; (for TCP)</p>
+</li>
+<li>
+<p>Add the concept of <strong>ports</strong></p>
+</li>
+<li>
+<p>e.g. TCP, UDP</p>
+<ul>
+<li>
+<p>TCP connections are streams (continuous)</p>
+</li>
+<li>
+<p>UDP transmissions are connectionless (basically IP with ports)</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Application Layer</p>
+<ul>
+<li>
+<p>Application-specific <strong>messages</strong></p>
+</li>
+<li>
+<p>Provides protocols that can work directly with applications</p>
+</li>
+<li>
+<p>e.g. HTTP, SMTP, FTP, DNS</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="layer-functions">layer functions</h4>
+<ul>
+<li>Each layer <strong><u>uses the lower</u></strong> and <strong><u>services the upper</u></strong> layer for data transmission</li>
+</ul>
+<img title="" src="img/1592749396442.jpg" alt="1592749396442.jpg" data-align="center" width="382">
+<ul>
+<li>
+<p><strong>Encapsulation</strong></p>
+<ul>
+<li>
+<p>Each lower layer adds at least header information to create new data unit</p>
+</li>
+<li>
+<p>Sometimes also trailer information is added</p>
+</li>
+<li>
+<p>If the previous data unit is too big, it can be fragmented (split into several
+smaller parts)</p>
+</li>
+<li>
+<p>Finally, a layer passes the newly created encapsulated data unit(s) to layer below</p>
+</li>
+</ul>
+</li>
+</ul>
+<img src="img/1592749384421.jpg" alt="1592749384421.jpg" data-align="center" width="243">
+<ul>
+<li>Devices on the route do not implement the whole stack of layers</li>
+</ul>
+<img src="img/1592749371632.jpg" alt="1592749371632.jpg" data-align="center" width="311">
+<h2 id="113-internet-protocol-and-vulnerabilities">11.3 Internet Protocol and Vulnerabilities</h2>
+<p>Network layer / Internet layer functions</p>
+<ul>
+<li>
+<p><em><strong>forwarding</strong></em> - move packets from router’s input to appropriate router output</p>
+</li>
+<li>
+<p><em><strong>path determination</strong></em>: Routing algorithms</p>
+</li>
+</ul>
+<h4 id="1131-a-ipv4">11.3.1 (a) IPv4</h4>
+<ol start="0">
+<li>
+<p>address interfaces use <strong>32 bit identerfiers</strong></p>
+<ul>
+<li>
+<p>Each interface has its own IP address</p>
+</li>
+<li>
+<p>Routers usually have multiple interfaces (with own IP addresses)</p>
+</li>
+<li>
+<p>Also other hosts might have multiple interfaces</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Subnets are <strong>sets of interfaces</strong> with the <strong>same IP prefix</strong> which communicate directly</p>
+<ul>
+<li>
+<p>Prefix a.b.c.d / p - set of IP addresses with same p</p>
+<ul>
+<li>
+<p>Network part: p</p>
+</li>
+<li>
+<p>Host part: remaining (32-p) least significant bits</p>
+</li>
+<li>
+<p>First and last IP of a subnet are reserved for network ID and broadcas</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Subnet</p>
+<ul>
+<li>
+<p>interfaces with IP addresses in prefix</p>
+</li>
+<li>
+<p>can communicate directly w/ each other (not via router)</p>
+</li>
+<li>
+<p>network size / #hosts: (usually)256</p>
+<p>easy to 1)Ping to detect active hosts, scan ports on an &ldquo;alive&rdquo; host 2) Vulnerabiluty test active ports</p>
+<p>Tools: <mark>Nmap, Amap, Nessus</mark></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>big packets are fragmented</p>
+<ul>
+<li>
+<p>Every Network has its own Maximum Transmission Unit (MTU) - Largest IP packet it can carry</p>
+<ul>
+<li>
+<p>e.g. MTU of Ethernet: 1500 bytes</p>
+</li>
+<li>
+<p>MTU is not known in advance</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Solution</p>
+<p>When reaching a network with a smaller MTU, fragment packet</p>
+<ul>
+<li>
+<p>Might get further fragmented when MTU changes again</p>
+</li>
+<li>
+<p>Client reassembles packets</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>IPv4 header</p>
+</li>
+</ol>
+<img title="" src="img/1592749018907.jpg" alt="1592749018907.jpg" data-align="center" width="504">
+<h4 id="1131-b-ip-spoofing">11.3.1 (b) IP Spoofing</h4>
+<ol start="0">
+<li>
+<p>IP Spoofing</p>
+<ul>
+<li>
+<p>Attacker constructs IP and transport headers with any chosen, false source IP address</p>
+</li>
+<li>
+<p>Can be done by any user with local root privileges</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Types of attacks</p>
+<ul>
+<li>
+<p>IP defragmentation cache poisoning</p>
+</li>
+<li>
+<p>DoS attacks</p>
+</li>
+<li>
+<p>DNS/HTTP poisoning</p>
+</li>
+<li>
+<p>Subvert access control (via impersonation)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Applications</p>
+<ul>
+<li>
+<p>Impersonate the communication partner of their victims</p>
+</li>
+<li>
+<p>Hiding: To avoid detection, attackers use spoofed packets with random sources</p>
+</li>
+<li>
+<p>Reflection Attacks: attackers can use reflectors to send reply packets to their victims</p>
+</li>
+<li>
+<p>DNS Amplification Attack: <strong>ip spoofed DNS queries</strong> to DNS Servers, DNS servers send many <strong>DNS replies</strong> to victim</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Defens - fiewall filtering</p>
+<ul>
+<li>
+<p><em><strong>Egress filtering</strong></em>: discard packets with source IP not in LAN</p>
+</li>
+<li>
+<p><em><strong>Ingress filtering</strong></em>: discard incoming packets with IP in LAN</p>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="1131-c-ipv6">11.3.1 (c) IPv6</h4>
+<ol start="0">
+<li>
+<p>basic</p>
+<ul>
+<li>
+<p>128 bit unique addresses w/ 64 bit network prefixes / host ip</p>
+</li>
+<li>
+<p>Autoconfiguration of IP addresses and networking</p>
+</li>
+<li>
+<p>hierarchical address structure -&gt; reduce operational costs</p>
+</li>
+<li>
+<p><strong>Host must choose their own IP address</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>IPv6 header - changes w.r.t IPv4</p>
+<ul>
+<li>
+<p>No IP record route option</p>
+</li>
+<li>
+<p>No mandatory identifier</p>
+</li>
+<li>
+<p>No broadcast addresses</p>
+</li>
+<li>
+<p>Multicast addresses can&rsquo;t be destined from remote</p>
+</li>
+</ul>
+</li>
+</ol>
+<img title="" src="img/1592923993623.jpg" alt="1592923993623.jpg" data-align="center" width="417">
+<ol start="2">
+<li>
+<p>Subnet: DNS Servers will become primary targets!</p>
+<ul>
+<li>
+<p>network size / #hosts: $2^{64}$</p>
+</li>
+<li>
+<p>Ping sweeps will consume too much time (bruteforce - 500 mio. years; tech - some month)</p>
+</li>
+<li>
+<p>Public servers need to be in the public DNS; All hosts need to be in a private DNS for admin purposes</p>
+</li>
+<li>
+<p>Security:</p>
+<ul>
+<li>
+<p>Once a host is compromised -&gt; local multicast to find all other hots</p>
+</li>
+<li>
+<p>Port scanning too</p>
+</li>
+<li>
+<p>Remote alive scans - impossible</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Blackhat usage of IPv6</p>
+<ul>
+<li>
+<p>Enable IPv6 to 4</p>
+</li>
+<li>
+<p>Run Backdoor on IPv6</p>
+</li>
+<li>
+<p>No chance to detect by port scanning</p>
+</li>
+<li>
+<p>Hard to analyze if backdoor traffic is detected</p>
+</li>
+</ul>
+</li>
+<li>
+<p>IPv6 interface identifier can be created from MAC addresses</p>
+<img title="" src="img/1592925476459.jpg" alt="1592925476459.jpg" width="463" data-align="center">
+<p>IPv6 has a Privacy Extension (RFC 4941) - Temporary Addresses</p>
+<ul>
+<li>
+<p>Address is based on a random value instead of MAC address; Addresses expire / have to be regenerated</p>
+</li>
+<li>
+<p>Temporary Addresses for IPv6 Applications (e.g. Browser)</p>
+</li>
+<li>
+<p>Enabled by default in Windows, Android, macOS, iOS, Linux, *BSD</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>Possible because IPs are chosen by each device and not the router</p>
+</li>
+<li>
+<p>Host still have a <strong>non-temporary address</strong> which is usually not used for
+new connections (but can be used)</p>
+</li>
+</ul>
+<p>Modern OS create a &ldquo;secured&rdquo; IP -  does not rely on the MAC address</p>
+<p><span style="color:red">IPv6 hosts can use <u>stateless address autoconfiguration</u></span></p>
+<ul>
+<li>
+<p>ICMPv6 Stateless auto configuration = DHCP light</p>
+</li>
+<li>
+<p>ICMP6 Neighbor Discovery and Neighbor Solicitation = ARP replacement</p>
+</li>
+</ul>
+<ul>
+<li>
+<p>No security added to both protocol variations</p>
+</li>
+<li>
+<p><strong>Duplicate Address Detection</strong> based on NS allows DoS against a host by
+responding to requests</p>
+</li>
+</ul>
+</li>
+<li>
+<p>ICMPv6 Stateless Auto-Configuration:</p>
+<p>configure routing tables and prefixes from router advertisements.</p>
+<ul>
+<li>
+<p>Routers send <strong>periodic</strong> and <strong>soliticated</strong> Router Advertisements (RA) to the all-nodes multicast address FF02::1</p>
+</li>
+<li>
+<p>Clients configure their routing tables and network prefix from advertisements =&gt; <mark>like a DHCP-light in IPv4</mark></p>
+</li>
+<li>
+<p>But anyone can send RAs =&gt; <span style="color:red">fake_router6 </span></p>
+<img title="" src="img/1592941680743.jpg" alt="1592941680743.jpg" width="455" data-align="inline">
+</li>
+</ul>
+</li>
+<li>
+<p>ICMPv6 Neighbor Discovery</p>
+<p>To obtain the MAC of an IP, a host sends a request to the all-nodes multicast address.</p>
+<ul>
+<li>
+<p>If A needs the MAC address of B, it sends an ICMP6 Neighbor Discovery to the All-Nodes multicast address</p>
+</li>
+<li>
+<p>B sees the request and responds to A with its MAC address =&gt; <mark>like ARP in IPv4</mark></p>
+</li>
+<li>
+<p>But everyone can respond to the request =&gt; <span style="color:red">parasite6</span></p>
+</li>
+</ul>
+</li>
+</ol>
+<img title="" src="img/1592942200936.jpg" alt="1592942200936.jpg" data-align="center" width="444">
+<ol start="7">
+<li>
+<p>ICMPv6 Duplicate Address Detection (DAD)</p>
+<p>Before setting its own IP address, a host checks if the address is already in use.</p>
+<ul>
+<li>
+<p>If A sets a new IP address, it makes the DAD check, to see if anybody owns the address already.</p>
+</li>
+<li>
+<p>Anybody can respond to the DAD checks =&gt;<span style="color:red"> dos-new-ipv6</span> =&gt; prevents new systems on the LAN</p>
+</li>
+<li>
+<p><strong>Duplicate Address Detection</strong> based on NS allows DoS against a host by responding to requests</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Dual stack requires firewall rules for IPv4 and <strong>IPv6</strong>!</p>
+</li>
+</ol>
+<h4 id="1132-internet-protocol-security-ipsec">11.3.2 Internet Protocol Security (IPSec)</h4>
+<ol start="0">
+<li>
+<p>Solutions</p>
+<ul>
+<li>
+<p><mark>Encryption</mark> is the main tool =&gt; Confidentiality</p>
+</li>
+<li>
+<p><mark>Authentication</mark> =&gt; against IP spoofing, prevent DoS, traffic analysis</p>
+</li>
+<li>
+<p>Where? End-to-end, hop-by-hop, Gateway to gateway.</p>
+</li>
+<li>
+<p>Which layer? link, internet, transport, appllication</p>
+</li>
+</ul>
+</li>
+<li>
+<p>IPSec Goal: provide universal authentication &amp; encryption</p>
+<ul>
+<li>
+<p>Universal: applied to all IP packets (Internet Layer)</p>
+</li>
+<li>
+<p><strong>End to end</strong> or <strong>gateway to gateway</strong> (or mixed) =&gt; Can protect IP packet headers (and payload)</p>
+</li>
+<li>
+<p><strong>Efficient, versatile</strong> – different tradeoffs, options</p>
+<p>Two modes: <u>transport</u> and <u>tunnel</u> (another IP header)</p>
+<p>Two formats/protocols:</p>
+<ul>
+<li>
+<p><strong>Authentication Header (AH)</strong>: authenticate</p>
+</li>
+<li>
+<p><strong>Encapsulating Security Payload (ESP)</strong>: authenticate and encrypt</p>
+</li>
+</ul>
+<p><strong>IKE</strong>: optional, flexible key management protocol</p>
+</li>
+</ul>
+</li>
+<li>
+<p>IPSec with <u>AH/ESP protocol</u> and <u>Transport/Tunnel mode</u></p>
+<img title="" src="img/1592943759278.jpg" alt="1592943759278.jpg" width="537">
+<p>AH and ESP can also be combinder</p>
+<img src="img/1592943934169.jpg" title="" alt="1592943934169.jpg" width="539">
+<ul>
+<li>
+<p>IPSec’s tunnel mode is mainly used to set up <mark>secure virtual private networks (VPN)</mark></p>
+<ul>
+<li>
+<p>Private Network - owned by single organization</p>
+</li>
+<li>
+<p>Secure VPN: secure networking over insecure links</p>
+<ul>
+<li>
+<p>E.g. over the Internet</p>
+</li>
+<li>
+<p>Prevent eavesdropping, spoofing</p>
+</li>
+<li>
+<p>Main use of <strong>IPSec (in tunnel mode)</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h4 id="114-the-transport-layer-protocols-udptcp">11.4 The Transport Layer Protocols (UDP/TCP)</h4>
+<h5 id="1141-udp--user-datagram-protocol">11.4.1 UDP &gt; User Datagram Protocol</h5>
+<ul>
+<li>
+<p>Connectionless</p>
+</li>
+<li>
+<p>Unreliable: packet loss, packet duplicate, packet out of order</p>
+<img src="img/1592944292130.jpg" title="" alt="1592944292130.jpg" width="392">
+</li>
+</ul>
+<h5 id="1142-tcp--transport-control-protocol">11.4.2 TCP &gt; Transport Control Protocol</h5>
+<ul>
+<li>
+<p>Overview - RFCs: 793, 1122, 1323, 2018, 2581</p>
+<ul>
+<li>
+<p>Point-to-Point &gt; one client, one server</p>
+</li>
+<li>
+<p>Reliable &gt; in-order byte stream: no &lsquo;msg boundaries&rsquo;</p>
+</li>
+<li>
+<p>connection-orientied &gt; Handshake before data exchange; Teardown (to free resources, detect failure)</p>
+</li>
+<li>
+<p>pipelined &amp; flow-control</p>
+<ul>
+<li>
+<p>TCP congestion and flow control set window size</p>
+</li>
+<li>
+<p>Sender will not overwhelm receiver</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Send &amp; receive buffers</p>
+</li>
+<li>
+<p>full duplex data: bi-directional data flow in same connection</p>
+</li>
+</ul>
+<img src="img/1592944802226.jpg" title="" alt="1592944802226.jpg" width="483">
+</li>
+<li>
+<p>TCP segment structure</p>
+<p><img  src="img/1592988268009.jpg"
+        alt="1592988268009.jpg"/></p>
+</li>
+<li>
+<p>TCP Service</p>
+<ul>
+<li>
+<p>TCP connection-based transport service:</p>
+<ul>
+<li>
+<p>Setup connection</p>
+</li>
+<li>
+<p>Use connection</p>
+</li>
+<li>
+<p>Close connection</p>
+</li>
+</ul>
+</li>
+<li>
+<p>TCP connection services:</p>
+<ul>
+<li>
+<p><strong>Flow control</strong>: don’t send faster than receiver can receive</p>
+</li>
+<li>
+<p><strong>Congestion control</strong>: slow down if network gets congested</p>
+</li>
+<li>
+<p><strong>Fairness</strong>: fair sharing of net resources among connections</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Loss and Retransmission</p>
+<ul>
+<li>
+<p>Sequence numbers (32bit) kept by both parties</p>
+<ul>
+<li>
+<p>When overflow, <code>wrap</code> to begin from zero</p>
+</li>
+<li>
+<p>Seq. number of first byte sent in this packet</p>
+</li>
+<li>
+<p>Seq. number of next byte expected from peer</p>
+</li>
+<li>
+<p>All bytes till this one were received Ok (ACK)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Packet or Ack is lost</p>
+</li>
+<li>
+<p>TCP retransmits lost packet &ldquo;Loss detected by timeout or by duplicate-acks&rdquo;</p>
+<p>Seq. number</p>
+<p>A - ACK number</p>
+<img src="img/1593013615415.jpg" title="" alt="1593013615415.jpg" width="383">
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>SYN Flooding DoS Attack</p>
+<p>Spoofing Adversary sends many SYN requests (using different client IP addresses) from spoofed src IP.</p>
+<ul>
+<li>
+<p>SYN requests (using different client IP addresses), no ACK</p>
+<p>Can attacker send SYN from IP addresses of real clients? -&gt; RST</p>
+</li>
+<li>
+<p>Use up server&rsquo;s capacity for open connections</p>
+<ul>
+<li>
+<p>Hence: SYN Clogging (or SYN Flooding)</p>
+</li>
+<li>
+<p>SRC IP: spoofed; non-RSTing; possibly victim (BW)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Countermeasures</p>
+<p>SYN cookies (keep state encoded in sequence number and drop state after SYN + ACK)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="115-internet-structure-and-routing">11.5 Internet Structure and Routing</h4>
+<p>Internet Structure also vulnerable</p>
+<h5 id="1151a-the-border-gateway-protocol-bgp">11.5.1(a) The Border Gateway Protocol (BGP)</h5>
+<p><strong>Autonomous System</strong>: a connected group of networks under a routing policy</p>
+<blockquote>
+<p>&ldquo;An AS is a connected group of one or more IP prefixes run by one or more network
+operators which has a SINGLE and CLEARLY DEFINED routing policy.&rdquo; (RFC 1930)</p>
+</blockquote>
+<ul>
+<li>
+<p>Characteristics of Autonomous Systems</p>
+<ul>
+<li>Collection of IP routing prefixes</li>
+</ul>
+<ul>
+<li>
+<p>Use single <mark><strong>exterior routing protocol</strong></mark> (BGP) 外部路由协议</p>
+</li>
+<li>
+<p>Usually under single administrative control</p>
+</li>
+<li>
+<p><u>Intra-AS routing protocols</u>, also called <strong><mark>Interior Gateway Protocols</mark> (IGP)</strong>, provide internal connectivity (e.g. RIP, OSPF,&hellip;)</p>
+</li>
+<li>
+<p>Each AS is identified by <strong>unique AS number (ASN)</strong> administered by Internet Assigned Numbers Authority (IANA) and assigned to Regional Internet Registries (RIR)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>The Internet comprises of <strong>many connected autonomous systems (AS)</strong></p>
+<img title="" src="img/1592991259605.jpg" alt="1592991259605.jpg" width="472" data-align="inline">
+<p>Routing in reality is usually based on cash flows</p>
+<img title="" src="img/1593004982301.jpg" alt="1593004982301.jpg" width="470">
+<ul>
+<li>
+<p>Inter-AS communication in the Internet uses the <strong>Border Gateway Protocol (BGP)</strong></p>
+<p>BGP version 4 (BGP4): Distance Vector Protocol (RFC 4271)</p>
+<ul>
+<li>
+<p>Usually AS path lengths are used as metric</p>
+</li>
+<li>
+<p>Uses sequence or set of AS’s to avoid loops</p>
+</li>
+<li>
+<p>Runs over <strong>TCP</strong>, thus attackers can</p>
+<ul>
+<li>Eavesdrop</li>
+</ul>
+<ul>
+<li>
+<p>DoS link bandwidth</p>
+</li>
+<li>
+<p>Attack CPU resources</p>
+</li>
+<li>
+<p>Manipulate packets</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>Routes are priotized based an the prefix and path length</li>
+</ul>
+<p>BGP speacker: a router implements BGP</p>
+<ul>
+<li>
+<p><strong>Update-processing</strong> by a Speaker</p>
+<ol>
+<li>
+<p>Receive update message</p>
+</li>
+<li>
+<p>Apply <u>in-bound filters</u></p>
+</li>
+<li>
+<p>Update Routing Information Base (RIB)</p>
+</li>
+<li>
+<p>Decide if route is better</p>
+</li>
+<li>
+<p>Update Forwarding Information Base (FIB)</p>
+</li>
+<li>
+<p>For each peer apply <u>out-bound filters</u> and send new update</p>
+<img src="img/1593006328551.jpg" title="" alt="1593006328551.jpg" width="151">
+<p>last: IP or prefix</p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="1151b-attacks-on-bgp">11.5.1(b) Attacks on BGP</h5>
+<p>4 sets of objectives</p>
+<ol>
+<li>
+<p>Blackholing</p>
+<ul>
+<li>
+<p>Prefix is unreachable from large portion of Internet</p>
+</li>
+<li>
+<p>Used to make a prefix private</p>
+</li>
+<li>
+<p>Routers can send announcement to tell others ASs not to send traffic for
+a given prefix (e.g. RFC 7999)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Redirection</p>
+<ul>
+<li>
+<p>Force traffic to take a different path and to reach incorrect destination</p>
+</li>
+<li>
+<p>Used for impersonation to obtain confidential information or for DoS</p>
+<blockquote>
+<p>BGP Hijacking</p>
+<ul>
+<li>
+<p>Reroute via <u>incorrect network</u> or to <u>incorrect destinations</u> (may be configuration failure)</p>
+</li>
+<li>
+<p>Allows to intercept, block or modify communication</p>
+</li>
+<li>
+<p>Targets (intentional or unintentional): Financial institutions, VoIP providers, governments</p>
+</li>
+<li></li>
+</ul>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>
+<p>Subversion 破坏</p>
+<ul>
+<li>
+<p>Special case of redirection</p>
+</li>
+<li>
+<p>Traffic passes through certain link but still reaches correct destination</p>
+</li>
+<li>
+<p>Used to eavesdrop or modify traffic</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Routing Instability</p>
+<ul>
+<li>
+<p>Make inter-AS routing instable (DoS)</p>
+</li>
+<li>
+<p>Used to create connectivity outages</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Update modifications: change update messages e.g. remove padding to force traffic over backup link (hard to detect)</p>
+</li>
+<li>
+<p>Advertent link flapping: force route dampening by frequently withdrawing and re-announcing routes</p>
+</li>
+<li>
+<p>Instability: force instability by flapping links without triggering dampening</p>
+</li>
+<li>
+<p>Congestion-induced BGP session failures: slow down BGP session or abort them by causing congestion</p>
+</li>
+</ol>
+<ul>
+<li>
+<p><mark>contradictory advertisements</mark> =&gt; An AS can send different routing announcements to different BGP peers</p>
+</li>
+<li>
+<p><mark>False UPDATEs and prefix hijacking</mark> =&gt; if multiple ASs announce themselves as owner of a prefix(Multiple AS’s claim a prefix or lie about their path)</p>
+</li>
+<li>
+<p><mark>De-Aggregation</mark> =&gt; De-aggregation breaks up an address block into more specific prefixes, BGP speakers prefer longest matching prefix</p>
+</li>
+</ul>
+<p>Countermeasures</p>
+<ul>
+<li>
+<p>BGP TTL Hack (filters non single-hop packets)</p>
+<p>Set TTL to 255 and only accept a TTL with 254</p>
+</li>
+</ul>
+<ul>
+<li>
+<p> TCP-MD5 (now TCP-AO) Authentication Option</p>
+</li>
+<li>
+<p> IPSec between BGP speakers</p>
+</li>
+<li>
+<p> CPU protections (drop packets that use CPU time)</p>
+</li>
+<li>
+<p>Route filtering</p>
+</li>
+<li>
+<p>Secure BGP (S-BGP, soBGP)</p>
+<ul>
+<li>
+<p>Route Attestation (RA)</p>
+</li>
+<li>
+<p>Address Attestation (AA)</p>
+</li>
+<li>
+<p> Use PKI (S-BGP) or “web of trust” (soBGP)</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="1152-the-domain-name-system-dns">11.5.2 The Domain Name System (DNS)</h4>
+<ul>
+<li>
+<p>Internet domains are resolved by the decentralized Domain Name System (DNS)</p>
+<img src="img/1593012483149.jpg" title="" alt="1593012483149.jpg" width="522">
+</li>
+<li>
+<p><mark>DNS cache-poisoing</mark>(Off-path attacks) =&gt; If an attacker poisons the resolver’s cache, he can redirect traffic to his own IP =&gt; used to exploit password recovery procedures</p>
+<p>Prevention:</p>
+<ul>
+<li>
+<p>challenge-response (&lsquo;cookie&rsquo;):</p>
+<p>challenge must has <strong>sufficient entropy</strong>(unpredictability) =&gt; e.g. random cookie from large jar</p>
+</li>
+<li>
+<p>Transaction identifier (TXID) randomization</p>
+</li>
+<li>
+<p>Name server randomization</p>
+</li>
+<li>
+<p>Port randomization</p>
+<ul>
+<li>
+<p>Statistics from CAIDA: 54% support unpredictable ports</p>
+</li>
+<li>
+<p>Popular operating systems support port randomization</p>
+</li>
+</ul>
+</li>
+</ul>
+<img src="img/1593012531928.jpg" title="" alt="1593012531928.jpg" width="523">
+<img src="img/1593012722650.jpg" title="" alt="1593012722650.jpg" width="523">
+</li>
+</ul>
+</article><section class="article author"><img class="avatar" src="/img/2.png" alt><p class="name">Roesinn</p><div class="bio"><strong>Security</strong> MSc. Student <br> <strong>Web</strong> Designer</div><div class="details"></div>
+</section></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/ref/browser-security/"><span class="iconfont icon-article-left"></span>Browser security</a></p><p><a class="link" href="/ref/rich-content/"><span class="iconfont icon-article-right"></span>Rich Content</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://roesinn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 roesinn</p>
+</div>
+</section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168886235-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+
+</html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="color-scheme" content="light dark">
-<meta name="supported-color-schemes" content="light dark"><title>混淆电路(三)：GMW协议&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="Garbled Circuit, secure two-party computation, secure multiple-party computation; 混淆电路，姚期智，安全两方计算，安全多方计算" /><link rel="stylesheet" href="/css/core.min.1669fbd751cb2a071e67f106e2639d9453b5a0bf78461131b81914b068ba4d10c8241ba6ae7cf45acbb07fd4374e24d4.css" integrity="sha384-Fmn711HLKgceZ/EG4mOdlFO1oL94RhExuBkUsGi6TRDIJBumrnz0Wsuwf9Q3TiTU"><meta name="twitter:card" content="summary" />
+<meta name="supported-color-schemes" content="light dark"><title>混淆电路(三)：GMW协议&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="Garbled Circuit, secure two-party computation, secure multiple-party computation; 混淆电路，姚期智，安全两方计算，安全多方计算" /><link rel="stylesheet" href="/css/core.min.ab0d3a5e22e3151993291f6d9b37cc3b84ccda3453f319de36b3694f9fbe6554d6330ff9f681e7aacbd495939a9c0262.css" integrity="sha384-qw06XiLjFRmTKR9tmzfMO4TM2jRT8xneNrNpT5&#43;&#43;ZVTWMw/59oHnqsvUlZOanAJi"><meta name="twitter:card" content="summary" />
 <meta name="twitter:title" content="混淆电路(三)：GMW协议" />
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
@@ -39,7 +39,7 @@
 <ul>
 <li>$$P_1$$的输出为：$$\textcolor{blue}{a_1,b_1,c_1}$$</li>
 <li>$$P_2$$的输出为：$$\textcolor{#EB4892}{a_2,b_2,c_2}$$</li>
-<li>特征：$$\textcolor{blue}{c_2} \oplus \textcolor{#EB4892}{c_2} = (a_1 \oplus a_2)(b_1 \oplus b_2) = \textcolor{blue}{a_1 b_1} \oplus \textcolor{#EB4892}{a_2} \textcolor{blue}{b_1} \oplus \textcolor{blue}{a_1} \textcolor{#EB4892}{b_2} \oplus \textcolor{#EB4892}{a_2 b_2}$$</li>
+<li>特征：$$\textcolor{blue}{c_1} \oplus \textcolor{#EB4892}{c_2} = (a_1 \oplus a_2)(b_1 \oplus b_2) = \textcolor{blue}{a_1 b_1} \oplus \textcolor{#EB4892}{a_2} \textcolor{blue}{b_1} \oplus \textcolor{blue}{a_1} \textcolor{#EB4892}{b_2} \oplus \textcolor{#EB4892}{a_2 b_2}$$</li>
 </ul>
 <blockquote>
 <p>随机OT协议(Random-OT)如下：
@@ -63,8 +63,9 @@ $$\circ$$ R-OT协议是一种特定的<strong>不经意传输协议</strong>(Obl
 </ol>
 <p>正确性：$$\textcolor{blue}{c_1} \oplus \textcolor{#eb4892}{c_2}=\textcolor{blue}{a_1b_1} \oplus \textcolor{blue}{u_1} \oplus \textcolor{blue}{v_1} \oplus \textcolor{#eb4892}{a_2b_2} \oplus \textcolor{#eb4892}{u_2} \oplus \textcolor{#eb4892}{v_2} = \textcolor{blue}{a_1 b_1} \oplus \textcolor{#EB4892}{a_2} \textcolor{blue}{b_1} \oplus \textcolor{blue}{a_1} \textcolor{#EB4892}{b_2} \oplus \textcolor{#EB4892}{a_2 b_2} $$</p>
 <h3 id="使用乘法对在线计算and门输出cite3cite">使用乘法对在线计算AND门输出<cite><sup id="fnref:3"><a href="#fn:3" class="footnote-ref" role="doc-noteref">3</a></sup></cite></h3>
-<p>目标：使用乘法对$$\textcolor{blue}{c_1} \oplus \textcolor{#eb4892}{c_2} = (\textcolor{blue}{a_1} \oplus \textcolor{#eb4892}{a_2})(\textcolor{blue}{b_1} \oplus \textcolor{#eb4892}{b_2})$$ 计算AND门输出。</p>
+<p>以下AND门输出为$$z=xy$$。$$x_1,y_1,z_1,x_2,y_2,z_2$$均为1bit。其中$$x=x_1 \oplus x_2$$; $$y=y_1 \oplus y_2$$; $$z=z_1 \oplus z_2$$.</p>
 <p><br><img style="width:210px" src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1592173030/blog/1592173013977_sxil1k.jpg"></p>
+<p>目标：使用乘法对$$\textcolor{blue}{c_1} \oplus \textcolor{#eb4892}{c_2} = (\textcolor{blue}{a_1} \oplus \textcolor{#eb4892}{a_2})(\textcolor{blue}{b_1} \oplus \textcolor{#eb4892}{b_2})$$ 计算AND门输出。<br></p>
 <ol>
 <li>$$P_1$$向$$P_2$$发送：$$d_1=x_1 \oplus \textcolor{blue}{a_1};e_1=y_1 \oplus \textcolor{blue}{b_1}$$</li>
 <li>$$P_2$$向$$P_1$$发送：$$d_2=x_2 \oplus \textcolor{#eb4892}{a_2};e_2=y_2 \oplus \textcolor{#eb4892}{b_2}$$</li>
@@ -111,15 +112,17 @@ $$= xy$$</p>
 </ul>
 <p>而GMW协议需要进行大量的<strong>起始准备工作</strong>，<strong>线上</strong>工作非常<strong>轻松</strong>。</p>
 <ul>
-<li>起始阶段：<br> $$-$$ 使用2个R-OT为每个AND门预计算乘法对，轮数为常数。 <br> $$-$$ 只需知道AND门的数量即可，与函数无关。</li>
-<li>在线阶段：<br> $$+$$ 只需使用一次一密(OTP)对电路求值。<br>$$-$$ 每个AND门需要 2*2=4 bit 的通信开销。</li>
+<li>起始阶段：<br> $$-$$ 使用2个R-OT为每个AND门预计算乘法对，轮数为常数。 <br> $$+$$ 只需知道AND门的数量即可，与函数无关。</li>
+<li>在线阶段：<br> $$+$$ 只需使用一次一密(OTP)对电路求值。<br>$$-$$ 每个AND门都需要 2*2=4 bit 的通信开销。</li>
 </ul>
 <blockquote>
-<p>这里比较Yao (使用HalfGates方案实现) 和GMW (负载均衡)
+<p>这里比较Yao (使用HalfGates方案实现) 和GMW (负载均衡) 协议：
 <img  src="https://res.cloudinary.com/dyzugxjmt/image/upload/v1592220033/blog/1592219439316_nwqxly.jpg"
         alt/>
 S: Sender; R: Receiver</p>
 </blockquote>
+<p>rounds表示通信轮数。GMW协议线下不需要通信，线上通信轮数取决于电路的乘法深度 (即AND门的最长路径)。</p>
+<p>对于高带宽低延迟的局域网，通信轮数和流量数通常不是问题，算法可以通过优化电路实现，因此GMW协议通常比Yao协议表现更好；对于需要较长往返时间的通信(至少125ms)，建议使用恒定通信轮数的Yao协议。</p>
 <h1 id="可安全计算的高效电路构造">可安全计算的高效电路构造</h1>
 <p>传统意义上高效的电路设计：</p>
 <ul>
@@ -156,7 +159,7 @@ S: Sender; R: Receiver</p>
 </ol>
 </section></article><section class="article labels"><a class="category" href=/categories/cryptoprotocol/>CryptoProtocol</a><a class="iconfont tag icon-tag" href=/tags/mpc/>MPC</a><a class="iconfont tag icon-tag" href=/tags/securecomupation/>SecureComupation</a></section><section class="article author"><img class="avatar" src="/img/2.png" alt><p class="name">Roesinn</p><div class="bio"><strong>Security</strong> MSc. Student <br> <strong>Web</strong> Designer</div><div class="details"></div>
 </section></div>
-<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/cryptoproto/garbledcircuit2/"><span class="iconfont icon-article-right"></span>混淆电路(二)：混淆电路构造的优化</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/cryptoproto/otextension/"><span class="iconfont icon-article-left"></span>OT扩展及优化</a></p><p><a class="link" href="/post/cryptoproto/garbledcircuit2/"><span class="iconfont icon-article-right"></span>混淆电路(二)：混淆电路构造的优化</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
 <script>
 
 

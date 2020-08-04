@@ -7,10 +7,30 @@
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <copyright>©2020 roesinn</copyright>
-    <lastBuildDate>Sun, 14 Jun 2020 19:15:41 +0200</lastBuildDate>
+    <lastBuildDate>Tue, 16 Jun 2020 10:24:28 +0200</lastBuildDate>
     
         <atom:link href="/tags/mpc/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>安全多方计算协议</title>
+      <link>/post/cryptoproto/mpc/</link>
+      <pubDate>Tue, 16 Jun 2020 10:24:28 +0200</pubDate>
+      
+      <guid>/post/cryptoproto/mpc/</guid>
+      <description></description>
+      
+    </item>
+    
+    <item>
+      <title>OT扩展及优化</title>
+      <link>/post/cryptoproto/otextension/</link>
+      <pubDate>Sun, 14 Jun 2020 19:17:33 +0200</pubDate>
+      
+      <guid>/post/cryptoproto/otextension/</guid>
+      <description>我们有许多基于公钥密码学的OT协议，但计算代价高昂。而OT又常常用于构建安全计算协议(STPC/SMPC)：通常每个输入比特、每个电路门都要</description>
+      
+    </item>
     
     <item>
       <title>混淆电路(三)：GMW协议</title>
@@ -39,6 +59,16 @@
       
       <guid>/post/cryptoproto/garbledcircuit/</guid>
       <description>&lt;p&gt;随着云计算、协同计算等新型计算模型的出现，仅仅对消息加密已经不能满足人们的安全需求。在交给代理商进行计算之前，用户希望对&lt;strong&gt;输入&lt;/strong&gt;和&lt;strong&gt;函数本身&lt;/strong&gt;都进行加密，从而达到保护函数“内部信息”的目的，这就是&lt;strong&gt;安全计算&lt;/strong&gt;。混淆电路(Garbled Circuit)就是一种对函数或电路加密的方法。&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>安全计算</title>
+      <link>/post/cryptoproto/securecomp/</link>
+      <pubDate>Tue, 09 Jun 2020 16:50:31 +0200</pubDate>
+      
+      <guid>/post/cryptoproto/securecomp/</guid>
+      <description>安全两方计算 混淆电路(一) 1 安全多方计算 安全多方计算是一个密码学工具，允许互不信任的参与方根据自己的输入计算任意一个函数，计算过程不泄露除输</description>
       
     </item>
     

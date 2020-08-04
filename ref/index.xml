@@ -23,12 +23,42 @@
     </item>
     
     <item>
+      <title>Browser security</title>
+      <link>/ref/browser-security/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/ref/browser-security/</guid>
+      <description>13. Browser Security Browser Security &amp;amp; Web Security Web browser: (client side) Attacks target browser security weaknesses Result in: Malware installation (keyloggers, bot-nets) Document theft from corporate network Loss of private data Web application code: (server side) Runs at web site: banks, e-merchants, blogs Written in PHP, ASP, JSP, Ruby, &amp;hellip; Many potential bugs: XSS, XSRF, SQL injection Attacks lead to stolen CC#, defaced sites. 13.1 Web Basics HTTP(S) is</description>
+      
+    </item>
+    
+    <item>
+      <title>Network security</title>
+      <link>/ref/network-security/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/ref/network-security/</guid>
+      <description>11. Network Security 11.1 Intro Network security deals with secure communication over an insecure medium. Secure Communication properties Confidentiality Intergrity - message contents remain unaltered Authentication Availability Adversary types Eavesdropping attackers only listen; no inject(spoof), intercept or modify; how? use (remote) antenna Defense: encryption Man-in-the-middle attackers On-path; can listen, inject, block and change messages how? Control router/switch/link; route-hijacking Defense: encryption, signatures, MACs Off-path attackers Off-path (do not control devices on</description>
+      
+    </item>
+    
+    <item>
       <title>Rich Content</title>
       <link>/ref/rich-content/</link>
       <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
       
       <guid>/ref/rich-content/</guid>
       <description>&lt;p&gt;Hugo ships with several &lt;a href=&#34;https://gohugo.io/content-management/shortcodes/#use-hugo-s-built-in-shortcodes&#34;target=&#34;_blank&#34;&gt;Built-in Shortcodes&lt;/a&gt; for rich content, along with a &lt;a href=&#34;https://gohugo.io/about/hugo-and-gdpr/&#34;target=&#34;_blank&#34;&gt;Privacy Config&lt;/a&gt; and a set of Simple Shortcodes that enable static and no-JS versions of various social media embeds.&lt;/p&gt;</description>
+      
+    </item>
+    
+    <item>
+      <title>Web security</title>
+      <link>/ref/web-security/</link>
+      <pubDate>Sun, 10 Mar 2019 00:00:00 +0000</pubDate>
+      
+      <guid>/ref/web-security/</guid>
+      <description>12. Web Security 12.1 Intro Big trend =&amp;gt; Software as a Web-based service Online banking, shopping, government, bill payment, tax prep, customer relationship management, etc. Cloud computing But, Security =&amp;gt; poor Poorly written scripts with inadequate input validation Sensitive data stored in world-readable files Typical Web Application Written in a mixture of PHP, Java, JavaScript, Python, C, Go, &amp;hellip; Runs on a Web server or Application Server Interacts with back-end</description>
       
     </item>
     
